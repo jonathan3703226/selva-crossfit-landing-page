@@ -1,0 +1,974 @@
+/* ==========================================================================
+   5. SEÇÃO PROMOCIONAL (BANNER HERO)
+   ========================================================================== */
+.promocional {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    background: #000;
+    padding: 100px 8% 4rem 8%;
+}
+
+.promo-imagem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.promo-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    filter: none !important;
+}
+
+.promocional::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+    z-index: 2;
+}
+
+.conteudo-promo {
+    position: relative;
+    z-index: 3;
+    max-width: 580px;
+    width: 100%;
+    text-align: left;
+    padding: 2rem 0;
+}
+
+.conteudo-promo > span:first-child {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.conteudo-promo h2 {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 0 0 3rem 0;
+}
+
+.conteudo-promo h2 span {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800 !important;
+    display: block;
+    font-size: 4rem !important;
+    line-height: 0.3;
+    margin-top: 2rem;
+}
+
+.conteudo-promo p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #e4e4e7;
+    max-width: 95%;
+    margin-bottom: 1.5rem;
+}
+
+.btn-green {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background: var(--accent);
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 20px rgba(151, 241, 36, 0.3);
+}
+
+.btn-green:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.btn-green:active {
+    transform: translateY(-1px);
+}
+/* ==========================================================================
+   RESPONSIVIDADE TABLET
+   ========================================================================== */
+@media (max-width: 992px) {
+    .promocional {
+        padding: 0 5%;
+    }
+    .conteudo-promo h2 {
+        font-size: 4.5rem;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE MOBILE GRANDE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .promocional {
+        min-height: 70vh;
+        justify-content: center;
+        padding: 80px 20px 4rem 20px; /* Adicionado padding-top para não dar conflito com o menu */
+    }
+    .promocional::after {
+        background: rgba(0, 0, 0, 0.7);
+    }
+    .conteudo-promo {
+        text-align: center;
+        max-width: 100%;
+    }
+    .conteudo-promo h2 {
+        font-size: 3.5rem;
+    }
+    .conteudo-promo h2 span {
+        line-height: 1.2; /* Corrigido o colapso de linha para telas menores */
+    }
+    .conteudo-promo p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE MOBILE PEQUENO (AJUSTE EXCLUSIVO DO GRÁTIS)
+   ========================================================================== */
+@media (max-width: 576px) {
+    /* O texto bem de cima - O SINAL '>' FOI ADICIONADO AQUI */
+    .conteudo-promo > span:first-child {
+        font-size: 0.8rem !important;
+        letter-spacing: 2px !important;
+        display: block !important;
+        margin-bottom: 0.8rem !important;
+        color: #ffffff !important;
+    }
+
+    /* O Título Principal */
+    .conteudo-promo h2 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+        margin: 0 0 1.5rem 0 !important;
+        color: #ffffff !important; 
+    }
+
+    /* O "GRÁTIS" (Agora ele vai respeitar esse tamanho!) */
+    .conteudo-promo h2 span {
+        font-size: 3.5rem !important; 
+        font-weight: 900 !important;  
+        line-height: 1.1 !important;  
+        margin-top: 0.6rem !important;
+        display: block !important;
+        color: #ffffff !important;    
+    }
+
+    /* Parágrafo descritivo */
+    .conteudo-promo p {
+        font-size: 0.95rem !important;
+        padding: 0 0.5rem !important;
+        max-width: 100% !important;
+        margin-bottom: 2rem !important;
+        color: #e4e4e7 !important;
+    }
+
+    /* Botão */
+    .btn-green {
+        font-size: 0.85rem !important;
+        padding: 14px 24px !important;
+        width: 100% !important;
+        justify-content: center !important;
+    }
+}
+/* ==========================================================================
+   SEÇÃO "POR QUE MATRICULAR"
+   ========================================================================== */
+.pq-selva-section { padding: 6rem 0; background: var(--bg-primary); overflow: hidden; }
+.pq-selva-container-centralizado { max-width: 1040px; margin: 0 auto; padding: 0 2.5rem; }
+.pq-selva-flex-layout { display: flex; gap: 4rem; align-items: center; }
+.pq-selva-texto-lado { flex: 0 0 38%; display: flex; flex-direction: column; }
+.pq-titulo-bloco { border-left: 4px solid var(--accent); padding-left: 1rem; margin-bottom: 1.5rem; }
+.section-main-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; line-height: 1.1; color: var(--text-primary); }
+.pq-texto-principal { font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); text-align: justify; }
+
+/* Carrossel */
+.pq-selva-carousel-lado { flex: 0 0 62%; position: relative; }
+.carousel-window { overflow: hidden; border-radius: 14px; position: relative; }
+.carousel-track { display: flex; width: 400%; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+.carousel-card-item { flex: 0 0 25%; }
+.card-img-box { position: relative; height: 400px; background: #111; }
+.card-img-box img { width: 100%; height: 100%; object-fit: cover; }
+.card-caption-inside {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 6rem 2rem 2rem; /* Aumentei o padding superior para o gradiente subir mais */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 40%, transparent 100%); /* Gradiente mais escuro e longo */
+    z-index: 5;
+}
+
+.card-caption-inside h3 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
+    margin-bottom: 0.5rem; /* Adicionado um pequeno respiro abaixo do título */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* Sombra extra no texto para garantir leitura */
+}
+
+.card-caption-inside p {
+    font-size: 0.85rem;
+    color: #ffffff; /* Forçando branco puro em vez da variável que pode mudar no modo claro */
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* Sombra extra no texto para garantir leitura */
+}
+.carousel-navigation-absolute { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; pointer-events: none; }
+.arrows-group-abs { display: none; width: 100%; height: 100%; justify-content: space-between; align-items: center; padding: 0 15px; }
+.carousel-navigation-absolute label, .carousel-navigation-absolute span { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: auto; }
+.arrow-abs-active { background: rgba(30, 30, 32, 0.75); border: 1px solid rgba(255, 255, 255, 0.15); color: #fff; cursor: pointer; backdrop-filter: blur(4px); }
+.arrow-abs-active:hover { background: var(--accent); color: #000; border-color: var(--accent); transform: scale(1.05); }
+.arrow-abs-disabled { background: rgba(17, 17, 18, 0.4); color: rgba(255, 255, 255, 0.2); cursor: not-allowed; }
+
+#pq-car-1:checked ~ .pq-selva-container-centralizado .ctrl-1,
+#pq-car-2:checked ~ .pq-selva-container-centralizado .ctrl-2,
+#pq-car-3:checked ~ .pq-selva-container-centralizado .ctrl-3,
+#pq-car-4:checked ~ .pq-selva-container-centralizado .ctrl-4 { display: flex; }
+#pq-car-1:checked ~ .pq-selva-container-centralizado .carousel-track { transform: translateX(0%); }
+#pq-car-2:checked ~ .pq-selva-container-centralizado .carousel-track { transform: translateX(-25%); }
+#pq-car-3:checked ~ .pq-selva-container-centralizado .carousel-track { transform: translateX(-50%); }
+#pq-car-4:checked ~ .pq-selva-container-centralizado .carousel-track { transform: translateX(-75%); }
+
+/* ==========================================================================
+   SEÇÃO TREINOS
+   ========================================================================== */
+.treinos-secao-global { background: var(--bg-primary); padding-top: 5rem; }
+.container-titulo-treinos { max-width: 1040px; margin: 0 auto 2rem; padding: 0 2.5rem; }
+.container-titulo-treinos .section-subtitle { font-size: 1.05rem; color: var(--text-secondary); }
+.treino-secao-independente { padding: 4.5rem 0; border-bottom: 1px solid var(--border-light); }
+.treino-container-centralizado { max-width: 1040px; margin: 0 auto; padding: 0 2.5rem; }
+.treino-row-grande { display: flex; align-items: center; justify-content: space-between; gap: 4rem; }
+.row-reverse-grande { flex-direction: row-reverse; }
+.treino-col-texto-grande { flex: 0 0 54%; }
+.treino-titulo-bloco { border-left: 4px solid var(--accent); padding-left: 1rem; margin-bottom: 0.8rem; }
+.treino-col-texto-grande h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; text-transform: uppercase; color: var(--accent); }
+.treino-badges-atributos { display: flex; gap: 12px; margin-bottom: 1.2rem; }
+.badge-atrib { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; background: var(--badge-bg); border: 1px solid var(--border-color); color: var(--text-primary); padding: 6px 12px; border-radius: 4px; display: flex; align-items: center; gap: 6px; box-shadow: var(--shadow-card); }
+.badge-atrib i { color: var(--accent); }
+.treino-descricao { font-size: 1rem; color: var(--text-secondary); text-align: justify; margin-bottom: 1.5rem; }
+.treino-horarios-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.2rem; box-shadow: var(--shadow-card); }
+.treino-horarios-box h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--text-primary); display: flex; gap: 8px; }
+.treino-horarios-box h4 i { color: var(--accent); }
+.horario-item { font-size: 0.88rem; color: var(--text-primary); }
+.horario-item span { color: var(--accent); font-weight: 600; }
+.treino-col-img-grande { flex: 0 0 40%; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-card); }
+.treino-col-img-grande img { width: 100%; height: 380px; object-fit: cover; transition: transform 0.5s ease; }
+.treino-secao-independente:hover .treino-col-img-grande img { transform: scale(1.02); }
+
+/* ==========================================================================
+   SEÇÃO HABITAT (FUNDO DE VÍDEO - TEXTOS SEMPRE BRANCOS)
+   ========================================================================== */
+.habitat-video-section { 
+    position: relative; 
+    width: 100%; 
+    min-height: 80vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: #000; 
+}
+
+.habitat-video-bg { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.habitat-overlay { 
+    position: relative; 
+    width: 100%; /* Preenche a tela toda */
+    height: 100%; 
+    padding: 6rem 2rem; 
+    background: rgba(0,0,0,0.75); /* Escurece o vídeo uniformemente */
+    z-index: 2; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; /* Centraliza os textos */
+}
+
+.habitat-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.habitat-content h2 { 
+    color: var(--accent); 
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 3rem; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    margin-bottom: 1rem;
+}
+
+.habitat-content .section-subtitle { 
+    color: var(--text-always-light); 
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.estrutura-list-container {
+    display: flex;
+    justify-content: center; /* Joga a lista para o centro da tela */
+}
+
+.estrutura-list { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.2rem; 
+    font-size: 1.1rem; 
+    text-align: left; /* Mantém os itens alinhados à esquerda entre eles */
+}
+
+.estrutura-list li {
+    color: var(--text-always-light);
+}
+
+.estrutura-list i { 
+    color: var(--accent); 
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   SEÇÃO DE PLANOS
+   ========================================================================== */
+.planos-secao-global { 
+    background: var(--bg-primary); 
+    padding: 6rem 0; 
+}
+
+.planos-titulo-bloco { 
+    border-left: 8px solid var(--accent); 
+    padding-left: 1rem; 
+    margin-bottom: 1rem; 
+}
+
+.container-titulo-planos {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+.container-titulo-planos h2 { 
+    font-size: 3.5rem; 
+    color: var(--text-primary); 
+    text-transform: uppercase;
+}
+
+.container-titulo-planos p { 
+    color: var(--text-secondary); 
+    font-size: 1.1rem;
+}
+
+.planos-container-centralizado { 
+    max-width: 1040px; 
+    margin: 3rem auto 0; 
+    padding: 0 2.5rem; 
+}
+
+.planos-grid-premium { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1.5rem; 
+    align-items: stretch;
+}
+
+.plano-card-premium { 
+    background: var(--bg-card); 
+    border: 1px solid var(--border-color); 
+    border-radius: 12px; 
+    padding: 3rem 1.5rem 2rem; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    box-shadow: var(--shadow-card); 
+    transition: transform 0.3s ease; 
+    position: relative; 
+}
+
+.plano-card-premium:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--border-light); 
+}
+
+/* Estilo específico do card Anual (Destaque) */
+.plano-card-premium.plano-destaque { 
+    border: 2px solid var(--accent); 
+}
+
+.tag-mais-vantajoso { 
+    position: absolute; 
+    top: -14px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background: var(--accent); 
+    color: #000000; 
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    font-family: 'Montserrat', sans-serif; 
+    text-transform: uppercase; 
+    padding: 6px 16px; 
+    border-radius: 20px; 
+    white-space: nowrap; 
+}
+
+.plano-header { 
+    text-align: center; 
+    margin-bottom: 1.5rem; 
+}
+
+.plano-header h3 { 
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 2.8rem; 
+    color: var(--text-primary); 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    line-height: 1; 
+}
+
+.plano-sub { 
+    font-size: 0.9rem; 
+    color: var(--text-secondary); 
+    margin-top: 0.5rem; 
+}
+
+/* Alinhamento perfeito do Preço */
+.plano-preco-box { 
+    display: flex; 
+    align-items: baseline; 
+    justify-content: center; 
+    color: var(--text-primary); 
+    margin-bottom: 1.5rem; 
+}
+
+.plano-preco-box .moeda { 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+}
+
+.plano-preco-box .valor { 
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 4.5rem; 
+    line-height: 1; 
+    margin: 0 5px; 
+}
+
+.plano-preco-box .periodo { 
+    color: var(--text-secondary); 
+    font-size: 1rem; 
+}
+
+.plano-economia-badge { 
+    background: rgba(255,255,255,0.05); 
+    border: 1px solid rgba(255,255,255,0.1); 
+    color: var(--text-primary); 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    padding: 6px 12px; 
+    border-radius: 4px; 
+    width: 100%; 
+    text-align: center; 
+    margin-bottom: 2rem; 
+}
+
+.economia-vazia { 
+    border-color: transparent; 
+    background: transparent; 
+    color: transparent; 
+    user-select: none; 
+}
+
+.badge-anual { 
+    background: rgba(130, 150, 121, 0.1); 
+    border-color: var(--accent); 
+    color: var(--accent) !important; 
+}
+
+.bonus-anual-tag { 
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 1.4rem; 
+    color: var(--accent); 
+    margin-bottom: 1.5rem; 
+    text-align: center; 
+    letter-spacing: 1px; 
+}
+
+.plano-beneficios { 
+    list-style: none; 
+    text-align: left; 
+    width: 100%; 
+    flex-grow: 1; 
+    margin-bottom: 2rem; 
+    padding: 0; 
+}
+
+.plano-beneficios li { 
+    font-size: 0.9rem; 
+    color: var(--text-secondary); 
+    margin-bottom: 1rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.plano-beneficios li i { 
+    color: var(--text-muted); 
+    font-size: 0.8rem; 
+}
+
+.plano-action {
+    width: 100%;
+}
+
+.btn-plano { 
+    display: block; 
+    width: 100%; 
+    text-align: center; 
+    padding: 12px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    color: var(--text-primary); 
+    border: 2px solid var(--border-color); 
+    border-radius: 6px; 
+    transition: all 0.3s ease;
+}
+
+.btn-plano:hover { 
+    background: var(--text-primary); 
+    color: var(--bg-primary); 
+}
+
+.btn-plano-destaque { 
+    background: var(--accent); 
+    border-color: var(--accent); 
+    color: #000000; 
+}
+
+.btn-plano-destaque:hover { 
+    background: var(--accent-dark); 
+    color: #000000; 
+    border-color: var(--accent-dark); 
+}
+/* ==========================================================================
+   SEÇÃO DE AVALIAÇÕES
+   ========================================================================== */
+#avaliacoes { 
+    padding-bottom: 5rem; 
+    background: var(--bg-primary); 
+}
+
+#reviews-tab-toggle { 
+    display: none; 
+}
+
+.rv-tabs { 
+    display: flex; 
+    gap: 15px; 
+    margin-bottom: 2.5rem; 
+    border-bottom: 1px solid var(--border-color); 
+    padding-bottom: 1rem; 
+}
+
+.rv-tab { 
+    padding: 8px 16px; 
+    font-size: .8rem; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    color: var(--text-primary); 
+    background: var(--bg-card); 
+    border: 1px solid var(--border-color); 
+    border-radius: 4px; 
+    cursor: pointer; 
+    display: flex; 
+    gap: 8px; 
+    transition: all 0.3s ease;
+}
+
+/* Aba ativa com a cor principal (Verde) e texto escuro para contraste */
+.rv-tabs .rv-tab--list, 
+#reviews-tab-toggle:checked ~ .rv-tabs .rv-tab--form { 
+    background: var(--accent); 
+    border-color: var(--accent); 
+    color: #000000; 
+}
+
+/* Aba inativa */
+#reviews-tab-toggle:checked ~ .rv-tabs .rv-tab--list { 
+    background: var(--bg-card); 
+    border-color: var(--border-color); 
+    color: var(--text-primary); 
+}
+
+.rv-panel--list { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); 
+    gap: 1.5rem; 
+}
+
+.rv-panel--form { display: none; }
+#reviews-tab-toggle:checked ~ .rv-panel--list { display: none; }
+#reviews-tab-toggle:checked ~ .rv-panel--form { display: block; }
+
+.rv-card { 
+    background: var(--bg-card); 
+    border: 1px solid var(--border-color); 
+    border-radius: 8px; 
+    padding: 1.5rem; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1rem; 
+    box-shadow: var(--shadow-card); 
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.rv-card:hover { 
+    border-color: var(--accent); 
+    transform: translateY(-4px); 
+}
+
+.rv-card:has(.rv-badge--positive) { border-left: 4px solid var(--accent); }
+.rv-card:has(.rv-badge--critical) { border-left: 4px solid #e24b4a; }
+.rv-card:has(.rv-badge--neutral)  { border-left: 4px solid #52525b; }
+
+.rv-avatar { 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    background: var(--bg-primary); 
+    border: 1px solid var(--border-color); 
+    color: var(--accent); 
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 1.2rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.rv-card__name { 
+    font-weight: 700; 
+    color: var(--text-primary); 
+}
+
+.rv-stars i.fas { color: var(--accent); }
+.rv-stars i.far { color: var(--border-color); }
+
+.rv-card__footer { 
+    display: flex; 
+    justify-content: space-between; 
+    padding-top: .75rem; 
+    border-top: 1px solid var(--border-color); 
+    align-items: center;
+}
+
+.rv-card__footer .badge-atrib { 
+    background: var(--bg-primary); 
+    border: 1px solid var(--border-color); 
+    color: var(--text-primary); 
+}
+
+.rv-date { 
+    font-size: .75rem; 
+    color: var(--text-secondary); 
+}
+
+.rv-badge { 
+    font-size: .65rem; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    padding: 3px 8px; 
+    border-radius: 4px; 
+}
+
+.rv-badge--positive { background: rgba(130, 150, 121, 0.15); color: var(--accent); }
+.rv-badge--critical { background: rgba(226, 75, 74, .1); color: #f87171; }
+.rv-badge--neutral { background: rgba(255, 255, 255, .05); color: #aaaaaa; }
+
+.rv-form-wrapper h3 { 
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 2.2rem; 
+    color: var(--accent); 
+}
+
+.rv-form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.25rem; 
+}
+
+.rv-form__row { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 1rem; 
+}
+
+.rv-form__field { 
+    display: flex; 
+    flex-direction: column; 
+    gap: .4rem; 
+}
+
+.rv-form__label { 
+    font-size: .75rem; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    color: var(--text-secondary); 
+}
+
+.rv-form__input { 
+    padding: .75rem 1rem; 
+    border-radius: 4px; 
+    border: 1px solid var(--border-color); 
+    background: var(--input-bg); 
+    color: var(--text-primary); 
+    transition: border-color 0.3s ease;
+}
+
+.rv-form__input:focus { 
+    border-color: var(--accent); 
+}
+
+.rv-star-picker { 
+    display: flex; 
+    flex-direction: row-reverse; 
+    justify-content: flex-end; 
+}
+
+.rv-star-picker label { 
+    font-size: 1.7rem; 
+    color: var(--border-color); 
+    cursor: pointer; 
+    padding: 0 .1rem; 
+    transition: color 0.2s ease;
+}
+
+.rv-star-picker label:hover, 
+.rv-star-picker label:hover ~ label, 
+.rv-star-picker input:checked ~ label { 
+    color: var(--accent) !important; 
+}
+
+.rv-form__submit { 
+    padding: 12px 24px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    background: var(--accent); 
+    color: #000000; 
+    border-radius: 4px; 
+    border: none; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rv-form__submit:hover {
+    background: var(--accent-dark);
+    transform: translateY(-2px);
+}
+/* ==========================================================================
+   SEÇÃO LÍDER (FLIP CARD)
+   ========================================================================== */
+#lider { 
+    background: var(--bg-primary) !important; 
+    padding: 6rem 0; /* Espaçamento padrão das seções */
+}
+
+/* Container do Flip Card - Ampliado e forçado a preencher a coluna */
+.flip-card-container { 
+    perspective: 1000px; 
+    width: 100%; 
+    max-width: 450px; /* Aumentado para a foto ficar maior, igual a foto 1 */
+    height: 480px;    /* Altura ajustada para acompanhar a nova largura */
+    margin: 0 auto;   /* Garante que fique centralizado na coluna esquerda */
+    cursor: pointer; 
+    -webkit-tap-highlight-color: transparent; 
+}
+
+.flip-card { 
+    width: 100%; 
+    height: 100%; 
+    position: relative; 
+    transition: transform 0.6s ease; 
+    transform-style: preserve-3d; 
+}
+
+.flip-card-container:hover .flip-card, 
+.flip-card-container.flipped .flip-card { 
+    transform: rotateY(180deg); 
+}
+
+.flip-front, .flip-back { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    backface-visibility: hidden; 
+    border-radius: 12px; 
+    padding: 2.5rem 2rem; /* Mais respiro interno */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-end; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.flip-front { 
+    background-image: url(../img/bannerFundador.webp); 
+    background-size: cover; 
+    background-position: center; /* Centraliza a foto de fundo */
+    border: 1px solid var(--border-color); 
+}
+
+/* Gradiente na base da foto para leitura limpa do texto */
+.flip-front::before { 
+    content: ''; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 60%; 
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); 
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.flip-front-content { 
+    position: relative; 
+    z-index: 1; 
+    color: var(--text-always-light); 
+    border-top: 2px solid var(--accent); 
+    padding-top: 15px; 
+    width: 100%;
+}
+
+.flip-front-content h3 { 
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 2.2rem; /* Título maior */
+    letter-spacing: 1px;
+}
+
+.flip-front-content p.cargo { 
+    color: var(--accent); 
+    font-weight: 700; 
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.flip-back { 
+    transform: rotateY(180deg); 
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark)); 
+    color: #fff; 
+    justify-content: center; 
+}
+
+/* Formatação do texto do lado direito (Lider) */
+.lider-col-texto-grande {
+    flex: 0 0 54%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lider-col-texto-grande .treino-titulo-bloco h3 {
+    font-family: 'Bebas Neue', sans-serif; 
+    font-size: 3rem; /* Retoma o tamanho grande (estilo H2) */
+    text-transform: uppercase; 
+    color: var(--text-primary); /* Branco ou preto, depende do tema */
+}
+
+.lider-col-texto-grande p {
+    font-size: 1.1rem; /* Aumenta a legibilidade do parágrafo */
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+/* ==========================================================================
+   SEÇÃO PARALLAX
+   ========================================================================== */
+.parallax-section { position: relative; text-align: center; background: #000; }
+.parallax-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(../img/bannerParallax.webp); background-attachment: fixed; background-size: cover; filter: grayscale(100%) contrast(120%) brightness(0.4); z-index: 0; }
+.parallax-overlay { position: relative; z-index: 1; padding: 10rem 2rem; }
+.parallax-overlay h3 { color: var(--text-always-light); font-size: 3.5rem; font-family: 'Bebas Neue', sans-serif; }
+.parallax-overlay p { color: var(--text-always-light); font-size: 1.3rem; margin-bottom: 2.5rem; }
+
+/* ==========================================================================
+   SEÇÃO EVENTOS E LOCALIZAÇÃO
+   ========================================================================== */
+.eventos-section, #localizacao { background: var(--bg-primary); }
+.eventos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1040px; margin: 0 auto; }
+.evento-link-wrapper { text-decoration: none; }
+.evento-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-card); transition: transform 0.3s ease; }
+.evento-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+.evento-img-wrapper { height: 180px; overflow: hidden; }
+.evento-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.evento-card:hover .evento-img-wrapper img { transform: scale(1.03); }
+.evento-info { padding: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; }
+.evento-info h3 { font-size: 1.05rem; color: var(--text-primary); }
+.evento-data, .evento-local { font-size: 0.88rem; color: var(--text-secondary); display: flex; gap: 10px; }
+.evento-data i, .evento-local i { color: var(--accent); }
+
+.localizacao-p { font-size: 1rem; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; margin-bottom: 2rem; justify-content: center; }
+.localizacao-p i { color: var(--accent); }
+.mapa-wrapper { width: 100%; max-width: 1040px; margin: 0 auto; }
+iframe { width: 100%; height: 400px; border-radius: 12px; border: 1px solid var(--border-color); filter: grayscale(0.2); transition: all 0.3s ease; }
+iframe:hover { filter: grayscale(0); border-color: var(--accent); }
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE E TABLET GERAL DAS SEÇÕES)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .pq-selva-flex-layout { flex-direction: column; }
+    .pq-selva-texto-lado, .pq-selva-carousel-lado, .treino-col-texto-grande, .treino-col-img-grande { flex: 0 0 100%; width: 100%; }
+    .pq-titulo-bloco, .treino-titulo-bloco, .container-titulo-planos, .localizacao-p { text-align: center; border: none; padding-left: 0; }
+    .text-left, .pq-texto-principal, .treino-descricao { text-align: center !important; }
+    .treino-row-grande { flex-direction: column !important; }
+    .treino-badges-atributos { justify-content: center; flex-wrap: wrap; }
+    .planos-grid-premium { grid-template-columns: repeat(2, 1fr); }
+    .eventos-grid { grid-template-columns: 1fr; max-width: 400px; }
+    .flip-card-container { margin: 0 auto; height: 360px; }
+}
+
+@media (max-width: 768px) {
+    .habitat-content h2 { font-size: 2.8rem; }
+    .rv-tabs { justify-content: center; }
+    .rv-panel--list, .rv-form__row { grid-template-columns: 1fr; }
+    iframe { height: 280px; }
+}
+
+@media (max-width: 576px) {
+    .planos-grid-premium { grid-template-columns: 1fr; }
+    .flip-card-container { height: 350px; }
+}

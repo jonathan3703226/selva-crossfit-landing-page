@@ -4,51 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description"
-        content="Selva CrossFit - Desperte seu instinto primal. A maior academia de Samambaia - DF.">
+    <meta name="description" content="Selva CrossFit - Desperte seu instinto primal. A maior academia de Samambaia - DF.">
     <meta name="theme-color" content="#e6e6e8">
     <title>Selva CrossFit | Desperte seu Instinto Primal - Samambaia/DF</title>
 
     <!-- Importação das fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Gothic&family=Montserrat:wght@400;700;800&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Gothic&family=Montserrat:wght@400;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Importação das fontes CSS-->
-    <link rel="stylesheet" href="css/base/reset.css">
-    <link rel="stylesheet" href="css/base/global.css">
-
-    <link rel="stylesheet" href="css/layout/header.css">
-    <link rel="stylesheet" href="css/layout/footer.css">
-
-    <link rel="stylesheet" href="css/sections/promocional.css">
-    <link rel="stylesheet" href="css/sections/carrossel.css">
-    <link rel="stylesheet" href="css/sections/treinos.css">
-    <link rel="stylesheet" href="css/sections/habitat.css">
-    <link rel="stylesheet" href="css/sections/planos.css">
-    <link rel="stylesheet" href="css/sections/reviwers.css">
-    <link rel="stylesheet" href="css/sections/lider.css">
-    <link rel="stylesheet" href="css/sections/parallax.css">
-    <link rel="stylesheet" href="css/sections/eventos.css">
-    <link rel="stylesheet" href="css/sections/localizacao.css">
-
+    <!-- Importação do CSS com caminhos corretos da pasta assets -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/sections.css">
 </head>
 
 <body>
-    <!-- Botão tema -->
+    <!-- Controles invisíveis para Tema e Menu Mobile -->
     <input type="checkbox" id="dark-toggle" class="sr-only" checked>
     <input type="checkbox" id="menu-toggle" class="sr-only">
 
     <div class="site-container">
 
-        <!-- Menu -->
+        <!-- HEADER -->
         <header class="main-header">
             <div class="header-container">
-
-                <!-- Logo -->
                 <a href="#inicio" class="logo-link" aria-label="Selva CrossFit - Voltar para o início">
                     <div class="logo-area-composta">
                         <img src="assets/icons/logo.svg" class="logo-simbolo" alt="" aria-hidden="true">
@@ -62,8 +44,7 @@
                 <nav class="top-nav" aria-label="Navegação principal">
                     <ul>
                         <li class="dropdown">
-                            <a href="#inicio" aria-haspopup="true">Treinos <i class="fas fa-chevron-down"
-                                    aria-hidden="true"></i></a>
+                            <a href="#inicio" aria-haspopup="true">Treinos <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#crossfit">CrossFit</a></li>
                                 <li><a href="#lpo">LPO</a></li>
@@ -74,8 +55,7 @@
                         <li><a href="#planos">Planos</a></li>
                         <li><a href="#localizacao">Localização</a></li>
                         <li class="nav-btn-container">
-                            <a href="https://api.whatsapp.com/send/?phone=556130488201" target="_blank" rel="noopener"
-                                class="btn-nav-eval">
+                            <a href="https://api.whatsapp.com/send/?phone=556130488201" target="_blank" rel="noopener" class="btn-nav-eval">
                                 Matricule-se <i class="fab fa-whatsapp" aria-hidden="true"></i>
                             </a>
                         </li>
@@ -89,41 +69,29 @@
                             <span class="sr-only">Alternar tema claro e escuro</span>
                         </label>
                     </div>
-
                     <label for="menu-toggle" class="btn-mobile-menu">
                         <i class="fas fa-bars" aria-hidden="true"></i>
                         <span class="sr-only">Abrir menu de navegação</span>
                     </label>
                 </div>
-
             </div>
         </header>
 
-        <!-- Seção banner promocional -->
+        <!-- BANNER PROMOCIONAL -->
         <section id="inicio" class="promocional">
             <div class="conteudo-promo">
                 <span>SUA JORNADA COMEÇA AGORA</span>
-                <h2>
-                    SEU PRIMEIRO MÊS É
-                    <span>GRÁTIS!</span>
-                </h2>
-                <p>
-                    Venha fazer parte da Selva e descubra do que você é capaz.
-                </p>
-                <a href="#planos" class="btn-green">
-                    Comece a treinar hoje
-                </a>
+                <h2>SEU PRIMEIRO MÊS É <span>GRÁTIS!</span></h2>
+                <p>Venha fazer parte da Selva e descubra do que você é capaz.</p>
+                <a href="#planos" class="btn-green">Comece a treinar hoje</a>
             </div>
             <div class="promo-imagem">
-                <img src="assets/img/banner/promocao.png" alt="Crossfit">
+                <img src="assets/img/bannerPromocao.webp" alt="Crossfit">
             </div>
         </section>
 
-
-        <!-- Seção Por Que Matricular na Selva -->
+        <!-- POR QUE SE MATRICULAR (Carrossel) -->
         <section id="por-que-selva" class="pq-selva-section">
-
-            <!-- Inputs de controle para movimentar o trilho lateralmente -->
             <input type="radio" name="pq-carousel-track" id="pq-car-1" checked class="sr-only">
             <input type="radio" name="pq-carousel-track" id="pq-car-2" class="sr-only">
             <input type="radio" name="pq-carousel-track" id="pq-car-3" class="sr-only">
@@ -131,8 +99,6 @@
 
             <div class="pq-selva-container-centralizado">
                 <div class="pq-selva-flex-layout">
-
-                    <!-- LADO ESQUERDO -->
                     <div class="pq-selva-texto-lado">
                         <div class="pq-titulo-bloco">
                             <h2 class="section-main-title text-left">Por que se matricular?</h2>
@@ -144,103 +110,72 @@
                         </p>
                     </div>
 
-                    <!-- LADO DIREITO -->
                     <div class="pq-selva-carousel-lado">
-
                         <div class="carousel-window">
-
-                            <!-- AS SETAS FLUTUANTES -->
                             <div class="carousel-navigation-absolute">
                                 <div class="arrows-group-abs ctrl-1">
                                     <span class="arrow-abs-disabled"><i class="fas fa-chevron-left"></i></span>
-                                    <label for="pq-car-2" class="arrow-abs-active"><i
-                                            class="fas fa-chevron-right"></i></label>
+                                    <label for="pq-car-2" class="arrow-abs-active"><i class="fas fa-chevron-right"></i></label>
                                 </div>
                                 <div class="arrows-group-abs ctrl-2">
-                                    <label for="pq-car-1" class="arrow-abs-active"><i
-                                            class="fas fa-chevron-left"></i></label>
-                                    <label for="pq-car-3" class="arrow-abs-active"><i
-                                            class="fas fa-chevron-right"></i></label>
+                                    <label for="pq-car-1" class="arrow-abs-active"><i class="fas fa-chevron-left"></i></label>
+                                    <label for="pq-car-3" class="arrow-abs-active"><i class="fas fa-chevron-right"></i></label>
                                 </div>
                                 <div class="arrows-group-abs ctrl-3">
-                                    <label for="pq-car-2" class="arrow-abs-active"><i
-                                            class="fas fa-chevron-left"></i></label>
-                                    <label for="pq-car-4" class="arrow-abs-active"><i
-                                            class="fas fa-chevron-right"></i></label>
+                                    <label for="pq-car-2" class="arrow-abs-active"><i class="fas fa-chevron-left"></i></label>
+                                    <label for="pq-car-4" class="arrow-abs-active"><i class="fas fa-chevron-right"></i></label>
                                 </div>
                                 <div class="arrows-group-abs ctrl-4">
-                                    <label for="pq-car-3" class="arrow-abs-active"><i
-                                            class="fas fa-chevron-left"></i></label>
+                                    <label for="pq-car-3" class="arrow-abs-active"><i class="fas fa-chevron-left"></i></label>
                                     <span class="arrow-abs-disabled"><i class="fas fa-chevron-right"></i></span>
                                 </div>
                             </div>
 
-                            <!-- TRILHO DE IMAGENS -->
                             <div class="carousel-track">
-
-                                <!-- Imagem 1: Comunidade -->
                                 <div class="carousel-card-item">
                                     <div class="card-img-box">
-                                        <img src="assets/img/carrossel/comunidade.webp" alt="Comunidade Selva CrossFit">
+                                        <img src="assets/img/carrosselComunidade.webp" alt="Comunidade Selva CrossFit" loading="lazy">
                                         <div class="card-caption-inside">
                                             <h3>Espírito de Tribo</h3>
-                                            <p>Você nunca treina sozinho. Nossa comunidade une atletas e coaches em um
-                                                ambiente de apoio, motivação e superação, onde cada conquista é
-                                                celebrada em equipe.</p>
+                                            <p>Você nunca treina sozinho. Nossa comunidade une atletas e coaches em um ambiente de apoio, motivação e superação, onde cada conquista é celebrada em equipe.</p>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Imagem 2: Instrutor -->
                                 <div class="carousel-card-item">
                                     <div class="card-img-box">
-                                        <img src="assets/img/carrossel/instrutor.webp" alt="Treinadores Selva CrossFit">
+                                        <img src="assets/img/carrosselInstrutor.webp" alt="Treinadores Selva CrossFit" loading="lazy">
                                         <div class="card-caption-inside">
                                             <h3>Treinadores de Verdade</h3>
-                                            <p>Profissionais altamente qualificados acompanham cada treino, garantindo
-                                                execução correta dos movimentos e prevenção de lesões. As aulas são
-                                                adaptadas ao seu nível, do iniciante ao atleta experiente.</p>
+                                            <p>Profissionais altamente qualificados acompanham cada treino, garantindo execução correta dos movimentos e prevenção de lesões. As aulas são adaptadas ao seu nível, do iniciante ao atleta experiente.</p>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Imagem 3: Variedade -->
                                 <div class="carousel-card-item">
                                     <div class="card-img-box">
-                                        <img src="assets/img/carrossel/variedade.webp"
-                                            alt="Treinos Dinâmicos Selva CrossFit">
+                                        <img src="assets/img/carrosselVariedade.webp" alt="Treinos Dinâmicos Selva CrossFit" loading="lazy">
                                         <div class="card-caption-inside">
                                             <h3>Treinos Dinâmicos</h3>
-                                            <p>Sem monotonia. Cada dia é um treino diferente, combinando levantamento de
-                                                peso, ginástica e cardio para manter a evolução constante e evitar
-                                                estagnação.</p>
+                                            <p>Sem monotonia. Cada dia é um treino diferente, combinando levantamento de peso, ginástica e cardio para manter a evolução constante e evitar estagnação.</p>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Imagem 4: Ambiente -->
                                 <div class="carousel-card-item">
                                     <div class="card-img-box">
-                                        <img src="assets/img/carrossel/ambiente.webp" alt="Estrutura Selva CrossFit">
+                                        <img src="assets/img/carrosselAmbiente.webp" alt="Estrutura Selva CrossFit" loading="lazy">
                                         <div class="card-caption-inside">
                                             <h3>Estrutura de Elite</h3>
-                                            <p>Estrutura completa para treinos de alta performance, com equipamentos
-                                                modernos, ambiente preparado e segurança para evoluir em qualquer nível.
-                                            </p>
+                                            <p>Estrutura completa para treinos de alta performance, com equipamentos modernos, ambiente preparado e segurança para evoluir em qualquer nível.</p>
                                         </div>
                                     </div>
                                 </div>
-
-                            </div> <!-- /carousel-track -->
-                        </div> <!-- /carousel-window -->
-
-                    </div> <!-- /pq-selva-carousel-lado -->
-
-                </div> <!-- /pq-selva-flex-layout -->
-            </div> <!-- /pq-selva-container-centralizado -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Seção de Treinos-->
+        <!-- TREINOS -->
         <section id="treinos" class="treinos-secao-global">
             <div class="container-titulo-treinos">
                 <div class="pq-titulo-bloco">
@@ -248,31 +183,27 @@
                 </div>
                 <p class="section-subtitle">Escolha a modalidade que melhor se adapta aos seus objetivos</p>
             </div>
-            <!-- MODALIDADE 1: CROSSFIT -->
+
+            <!-- CrossFit -->
             <div id="crossfit" class="treino-secao-independente">
                 <div class="treino-container-centralizado">
                     <div class="treino-row-grande">
                         <div class="treino-col-img-grande">
-                            <img src="assets/img/modalidades/crossfit.webp" alt="Treino de CrossFit Selva">
+                            <img src="assets/img/modalidadeCrossfit.webp" alt="Treino de CrossFit Selva" loading="lazy">
                         </div>
                         <div class="treino-col-texto-grande">
-                            <div class="treino-titulo-bloco">
-                                <h3>CrossFit</h3>
-                            </div>
+                            <div class="treino-titulo-bloco"><h3>CrossFit</h3></div>
                             <div class="treino-badges-atributos">
                                 <span class="badge-atrib"><i class="fas fa-fire"></i> Alta Intensidade</span>
                                 <span class="badge-atrib"><i class="fas fa-stopwatch"></i> 60 min</span>
                             </div>
                             <p class="treino-descricao">
-                                Nosso treino integra movimentos funcionais, levantamento de peso olímpico, ginástica e
-                                condicionamento metabólico. Estruturado em alta intensidade e adaptado a diferentes
-                                níveis, promove melhora de desempenho físico, condicionamento e evolução contínua.
+                                Nosso treino integra movimentos funcionais, levantamento de peso olímpico, ginástica e condicionamento metabólico. Estruturado em alta intensidade e adaptado a diferentes níveis, promove melhora de desempenho físico, condicionamento e evolução contínua.
                             </p>
                             <div class="treino-horarios-box">
                                 <h4><i class="far fa-clock"></i> Horários das aulas</h4>
                                 <div class="horarios-grid">
-                                    <div class="horario-item"><span>Segunda a sexta-feira:</span> das 06h às 20h (com
-                                        aulas distribuídas ao longo do dia)</div>
+                                    <div class="horario-item"><span>Segunda a sexta:</span> 06h às 20h</div>
                                     <div class="horario-item"><span>Sábados:</span> 09h e 10h</div>
                                 </div>
                             </div>
@@ -281,27 +212,21 @@
                 </div>
             </div>
 
-            <!-- MODALIDADE 2: LPO & FORÇA -->
+            <!-- LPO -->
             <div id="lpo" class="treino-secao-independente">
                 <div class="treino-container-centralizado">
                     <div class="treino-row-grande row-reverse-grande">
                         <div class="treino-col-img-grande">
-                            <img src="assets/img/modalidades/lpo.webp" alt="Treino de LPO Selva">
+                            <img src="assets/img/modalidadeLpo.webp" alt="Treino de LPO Selva" loading="lazy">
                         </div>
                         <div class="treino-col-texto-grande">
-                            <div class="treino-titulo-bloco">
-                                <h3>LPO & Força</h3>
-                            </div>
+                            <div class="treino-titulo-bloco"><h3>LPO & Força</h3></div>
                             <div class="treino-badges-atributos">
-                                <span class="badge-atrib"><i class="fas fa-dumbbell"></i> Intensidade: moderada a
-                                    alta</span>
+                                <span class="badge-atrib"><i class="fas fa-dumbbell"></i> Mod/Alta Intensidade</span>
                                 <span class="badge-atrib"><i class="fas fa-stopwatch"></i> 60 min</span>
                             </div>
                             <p class="treino-descricao">
-                                Treino focado no desenvolvimento de força máxima e potência através dos principais
-                                levantamentos olímpicos, como arranco e arremesso, além de exercícios auxiliares de
-                                força. O objetivo é aprimorar técnica, controle motor e capacidade de gerar força com
-                                eficiência, com progressão adaptada a cada nível de praticante.
+                                Treino focado no desenvolvimento de força máxima e potência através dos principais levantamentos olímpicos, como arranco e arremesso, além de exercícios auxiliares de força. O objetivo é aprimorar técnica, controle motor e capacidade de gerar força com eficiência, com progressão adaptada a cada nível de praticante.
                             </p>
                             <div class="treino-horarios-box">
                                 <h4><i class="far fa-clock"></i> Horários das Aulas</h4>
@@ -315,27 +240,21 @@
                 </div>
             </div>
 
-            <!-- MODALIDADE 3: CROSSFIT MASTER -->
+            <!-- Master -->
             <div id="crossfit-master" class="treino-secao-independente">
                 <div class="treino-container-centralizado">
                     <div class="treino-row-grande">
                         <div class="treino-col-img-grande">
-                            <img src="assets/img/modalidades/master.webp" alt="Treino de CrossFit Master Selva">
+                            <img src="assets/img/modalidadeMaster.webp" alt="Treino Master Selva" loading="lazy">
                         </div>
                         <div class="treino-col-texto-grande">
-                            <div class="treino-titulo-bloco">
-                                <h3>CrossFit Master</h3>
-                            </div>
+                            <div class="treino-titulo-bloco"><h3>CrossFit Master</h3></div>
                             <div class="treino-badges-atributos">
-                                <span class="badge-atrib"><i class="fas fa-user-shield"></i> Intensidade:
-                                    moderada</span>
+                                <span class="badge-atrib"><i class="fas fa-user-shield"></i> Intensidade Moderada</span>
                                 <span class="badge-atrib"><i class="fas fa-stopwatch"></i> 50 a 60 min</span>
                             </div>
                             <p class="treino-descricao">
-                                Treino adaptado para praticantes experientes que buscam manter e aprimorar
-                                condicionamento físico, força e mobilidade com segurança. Combina movimentos funcionais,
-                                força e condicionamento em intensidade ajustada, priorizando técnica, consistência e
-                                evolução sustentável.
+                                Treino adaptado para praticantes experientes que buscam manter e aprimorar condicionamento físico, força e mobilidade com segurança. Combina movimentos funcionais, força e condicionamento em intensidade ajustada, priorizando técnica, consistência e evolução sustentável.
                             </p>
                             <div class="treino-horarios-box">
                                 <h4><i class="far fa-clock"></i> Horários das Aulas</h4>
@@ -350,36 +269,29 @@
             </div>
         </section>
 
-        <!-- Seção de habitat-->
+        <!-- HABITAT -->
         <section id="estrutura" class="habitat-video-section">
             <video autoplay loop muted playsinline poster="assets/video/video.mp4" class="habitat-video-bg">
                 <source src="assets/video/video.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos.
             </video>
-
             <div class="habitat-overlay">
                 <div class="container habitat-content">
                     <h2>Nosso Habitat</h2>
-                    <p class="section-subtitle">Mais de 500m² de área equipada. Um ambiente projetado para você se
-                        desligar do mundo lá fora e focar no seu treinamento.</p>
-
+                    <p class="section-subtitle">Mais de 500m² de área equipada. Um ambiente projetado para você se desligar do mundo lá fora e focar no seu treinamento.</p>
                     <div class="estrutura-list-container">
                         <ul class="estrutura-list">
                             <li><i class="fas fa-check-circle" aria-hidden="true"></i> 500m² de território livre</li>
-                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Equipamentos profissionais de
-                                alta resistência</li>
-                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Ambiente climatizado e preparado
-                                para alta intensidade</li>
-                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Piso emborrachado de alta
-                                absorção</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Equipamentos profissionais de alta resistência</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Ambiente climatizado e preparado para alta intensidade</li>
+                            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Piso emborrachado de alta absorção</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <main>
 
-            <!-- Seção de Planos -->
+        <main>
+            <!-- PLANOS -->
             <section id="planos" class="planos-secao-global">
                 <div class="container-titulo-planos">
                     <div class="planos-titulo-bloco">
@@ -390,83 +302,63 @@
 
                 <div class="planos-container-centralizado">
                     <div class="planos-grid-premium">
-
-                        <!-- CARD 1: MENSAL -->
                         <div class="plano-card-premium">
                             <div class="plano-header">
                                 <h3>Mensal</h3>
                                 <p class="plano-sub">Ideal para começar</p>
                             </div>
                             <div class="plano-preco-box">
-                                <span class="moeda">R$</span>
-                                <span class="valor">389</span>
-                                <span class="periodo">/mês</span>
+                                <span class="moeda">R$</span><span class="valor">389</span><span class="periodo">/mês</span>
                             </div>
-                            <div class="plano-economia-badge economia-vazia">
-                                —
-                            </div>
+                            <div class="plano-economia-badge economia-vazia">—</div>
                             <ul class="plano-beneficios">
                                 <li><i class="fas fa-check"></i> Acesso livre ao Box</li>
                                 <li><i class="fas fa-check"></i> Sem fidelidade</li>
                                 <li><i class="fas fa-check"></i> Sem taxa de matrícula</li>
                             </ul>
                             <div class="plano-action">
-                                <a href="https://api.whatsapp.com/send/?phone=556130488201" target="_blank"
-                                    rel="noopener" class="btn-plano">Matricule-se</a>
+                                <a href="https://api.whatsapp.com/send/?phone=556130488201" target="_blank" rel="noopener" class="btn-plano">Matricule-se</a>
                             </div>
                         </div>
 
-                        <!-- CARD 2: TRIMESTRAL -->
                         <div class="plano-card-premium">
                             <div class="plano-header">
                                 <h3>Trimestral</h3>
                                 <p class="plano-sub">Foco no primeiro passo</p>
                             </div>
                             <div class="plano-preco-box">
-                                <span class="moeda">R$</span>
-                                <span class="valor">349</span>
-                                <span class="periodo">/mês</span>
+                                <span class="moeda">R$</span><span class="valor">349</span><span class="periodo">/mês</span>
                             </div>
-                            <div class="plano-economia-badge">
-                                Economize R$ 120
-                            </div>
+                            <div class="plano-economia-badge">Economize R$ 120</div>
                             <ul class="plano-beneficios">
                                 <li><i class="fas fa-check"></i> Acesso livre ao Box</li>
                                 <li><i class="fas fa-check"></i> Contrato de 3 meses</li>
                                 <li><i class="fas fa-check"></i> Sem taxa de matrícula</li>
                             </ul>
                             <div class="plano-action">
-                                <a href="https://api.whatsapp.com/send/?phone=556130488201" target="_blank"
-                                    rel="noopener" class="btn-plano">Matricule-se</a>
+                                <a href="https://api.whatsapp.com/send/?phone=556130488201" target="_blank" rel="noopener" class="btn-plano">Matricule-se</a>
                             </div>
                         </div>
 
-                        <!-- CARD 3: SEMESTRAL -->
                         <div class="plano-card-premium">
                             <div class="plano-header">
                                 <h3>Semestral</h3>
                                 <p class="plano-sub">Compromisso com o resultado</p>
                             </div>
                             <div class="plano-preco-box">
-                                <span class="moeda">R$</span>
-                                <span class="valor">329</span>
-                                <span class="periodo">/mês</span>
+                                <span class="moeda">R$</span><span class="valor">329</span><span class="periodo">/mês</span>
                             </div>
-                            <div class="plano-economia-badge">
-                                Economize R$ 360
-                            </div>
+                            <div class="plano-economia-badge">Economize R$ 360</div>
                             <ul class="plano-beneficios">
                                 <li><i class="fas fa-check"></i> Acesso livre ao Box</li>
                                 <li><i class="fas fa-check"></i> Contrato de 6 meses</li>
                                 <li><i class="fas fa-check"></i> Sem taxa de matrícula</li>
                             </ul>
                             <div class="plano-action">
-                                <a href="https://api.whatsapp.com/send/?phone=556130488201" target="_blank"
-                                    rel="noopener" class="btn-plano">Matricule-se</a>
+                                <a href="https://api.whatsapp.com/send/?phone=556130488201" target="_blank" rel="noopener" class="btn-plano">Matricule-se</a>
                             </div>
                         </div>
 
-                        <!-- CARD 4: ANUAL (DESTAQUE) -->
                         <div class="plano-card-premium plano-destaque">
                             <div class="tag-mais-vantajoso">Melhor Custo-Benefício</div>
                             <div class="plano-header">
@@ -474,32 +366,24 @@
                                 <p class="plano-sub">Estilo de vida definitivo</p>
                             </div>
                             <div class="plano-preco-box">
-                                <span class="moeda">R$</span>
-                                <span class="valor">249</span>
-                                <span class="periodo">/mês</span>
+                                <span class="moeda">R$</span><span class="valor">249</span><span class="periodo">/mês</span>
                             </div>
-                            <div class="plano-economia-badge badge-anual">
-                                Economize R$ 1.680
-                            </div>
-                            <div class="bonus-anual-tag">
-                                <i class="fas fa-gift"></i> 1º MÊS GRÁTIS!
-                            </div>
+                            <div class="plano-economia-badge badge-anual">Economize R$ 1.680</div>
+                            <div class="bonus-anual-tag"><i class="fas fa-gift"></i> 1º MÊS GRÁTIS!</div>
                             <ul class="plano-beneficios">
                                 <li><i class="fas fa-check"></i> Acesso livre ao Box</li>
                                 <li><i class="fas fa-check"></i> Contrato de 12 meses</li>
                                 <li><i class="fas fa-check"></i> Sem taxa de matrícula</li>
                             </ul>
                             <div class="plano-action">
-                                <a href="https://api.whatsapp.com/send/?phone=556130488201" target="_blank"
-                                    rel="noopener" class="btn-plano btn-plano-destaque">Matricule-se</a>
+                                <a href="https://api.whatsapp.com/send/?phone=556130488201" target="_blank" rel="noopener" class="btn-plano btn-plano-destaque">Matricule-se</a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
 
-            <!-- Seção de Avaliações -->
+            <!-- AVALIAÇÕES -->
             <section id="avaliacoes" class="treinos-secao-global">
                 <div class="container-titulo-treinos">
                     <div class="pq-titulo-bloco">
@@ -509,193 +393,130 @@
                 </div>
 
                 <div class="treino-container-centralizado">
-                    <!-- Controle das abas -->
                     <input type="checkbox" id="reviews-tab-toggle" class="sr-only">
-
-                    <!-- Abas Estilizadas -->
                     <div class="rv-tabs">
-                        <label class="rv-tab rv-tab--list" for="reviews-tab-toggle">
-                            <i class="fas fa-star" aria-hidden="true"></i> Avaliações
-                        </label>
-                        <label class="rv-tab rv-tab--form" for="reviews-tab-toggle">
-                            <i class="fas fa-pen" aria-hidden="true"></i> Comentar
-                        </label>
+                        <label class="rv-tab rv-tab--list" for="reviews-tab-toggle"><i class="fas fa-star" aria-hidden="true"></i> Avaliações</label>
+                        <label class="rv-tab rv-tab--form" for="reviews-tab-toggle"><i class="fas fa-pen" aria-hidden="true"></i> Comentar</label>
                     </div>
 
-                    <!-- Painel: Lista de avaliações (6 cards) -->
                     <div class="rv-panel rv-panel--list">
-
-                        <!-- Card 1 -->
                         <article class="rv-card">
-                            <h3 class="sr-only">Avaliação de Ana Carvalho</h3>
                             <header class="rv-card__header">
                                 <div class="rv-avatar">A</div>
                                 <div>
                                     <p class="rv-card__name">Ana Carvalho</p>
                                     <div class="rv-stars rv-stars--5">
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <span class="sr-only">5 de 5 estrelas</span>
+                                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <span class="rv-badge rv-badge--positive">Positiva</span>
                             </header>
-                            <p class="treino-descricao">"Entrei sem saber nada de CrossFit e hoje levanto o dobro do meu
-                                peso. A Selva muda você de dentro para fora."</p>
+                            <p class="treino-descricao">"Entrei sem saber nada de CrossFit e hoje levanto o dobro do meu peso. A Selva muda você de dentro para fora."</p>
                             <footer class="rv-card__footer">
                                 <span class="badge-atrib"><i class="fas fa-fire"></i> CrossFit</span>
                                 <time class="rv-date" datetime="2026-05">Mai 2026</time>
                             </footer>
                         </article>
 
-                        <!-- Card 2 -->
                         <article class="rv-card">
-                            <h4 class="sr-only">Avaliação de Rafael Torres</h4>
                             <header class="rv-card__header">
                                 <div class="rv-avatar">R</div>
                                 <div>
                                     <p class="rv-card__name">Rafael Torres</p>
                                     <div class="rv-stars rv-stars--4">
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="far fa-star" aria-hidden="true"></i>
-                                        <span class="sr-only">4 de 5 estrelas</span>
+                                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="far fa-star" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <span class="rv-badge rv-badge--positive">Positiva</span>
                             </header>
-                            <p class="treino-descricao">"Os treinos de LPO são brutais no bom sentido. O Rodrigo é
-                                exigente, mas cada segundo vale. Recomendo sem hesitar."</p>
+                            <p class="treino-descricao">"Os treinos de LPO são brutais no bom sentido. O Rodrigo é exigente, mas cada segundo vale. Recomendo sem hesitar."</p>
                             <footer class="rv-card__footer">
                                 <span class="badge-atrib"><i class="fas fa-dumbbell"></i> LPO & Força</span>
                                 <time class="rv-date" datetime="2026-04">Abr 2026</time>
                             </footer>
                         </article>
 
-                        <!-- Card 3 -->
                         <article class="rv-card">
-                            <h4 class="sr-only">Avaliação de Juliana Melo</h4>
                             <header class="rv-card__header">
                                 <div class="rv-avatar">J</div>
                                 <div>
                                     <p class="rv-card__name">Juliana Melo</p>
                                     <div class="rv-stars rv-stars--5">
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <span class="sr-only">5 de 5 estrelas</span>
+                                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <span class="rv-badge rv-badge--positive">Positiva</span>
                             </header>
-                            <p class="treino-descricao">"O CrossFit Master me deu controle de corpo que nunca tive com
-                                total segurança. A comunidade aqui é incrível."</p>
+                            <p class="treino-descricao">"O CrossFit Master me deu controle de corpo que nunca tive com total segurança. A comunidade aqui é incrível."</p>
                             <footer class="rv-card__footer">
                                 <span class="badge-atrib"><i class="fas fa-user-shield"></i> CrossFit Master</span>
                                 <time class="rv-date" datetime="2026-04">Abr 2026</time>
                             </footer>
                         </article>
 
-                        <!-- Card 4 -->
                         <article class="rv-card">
-                            <h4 class="sr-only">Avaliação de Marcos Vieira</h4>
                             <header class="rv-card__header">
                                 <div class="rv-avatar">M</div>
                                 <div>
                                     <p class="rv-card__name">Marcos Vieira</p>
                                     <div class="rv-stars rv-stars--3">
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="far fa-star" aria-hidden="true"></i>
-                                        <i class="far fa-star" aria-hidden="true"></i>
-                                        <span class="sr-only">3 de 5 estrelas</span>
+                                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="far fa-star" aria-hidden="true"></i><i class="far fa-star" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <span class="rv-badge rv-badge--neutral">Neutra</span>
                             </header>
-                            <p class="treino-descricao">"Treino bom, estrutura ótima. Sinto falta de mais horários
-                                noturnos durante a semana. No geral, vale muito o investimento."</p>
+                            <p class="treino-descricao">"Treino bom, estrutura ótima. Sinto falta de mais horários noturnos durante a semana. No geral, vale muito o investimento."</p>
                             <footer class="rv-card__footer">
                                 <span class="badge-atrib"><i class="fas fa-fire"></i> CrossFit</span>
                                 <time class="rv-date" datetime="2026-03">Mar 2026</time>
                             </footer>
                         </article>
 
-                        <!-- Card 5 -->
                         <article class="rv-card">
-                            <h4 class="sr-only">Avaliação de Camila Souza</h4>
                             <header class="rv-card__header">
                                 <div class="rv-avatar">C</div>
                                 <div>
                                     <p class="rv-card__name">Camila Souza</p>
                                     <div class="rv-stars rv-stars--5">
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <span class="sr-only">5 de 5 estrelas</span>
+                                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <span class="rv-badge rv-badge--positive">Positiva</span>
                             </header>
-                            <p class="treino-descricao">"Lugar incrível. Cada treino é um desafio novo. Perdi 8kg em 3
-                                meses e ganhei muito mais do que isso em disposição e confiança."</p>
+                            <p class="treino-descricao">"Lugar incrível. Cada treino é um desafio novo. Perdi 8kg em 3 meses e ganhei muito mais do que isso em disposição e confiança."</p>
                             <footer class="rv-card__footer">
                                 <span class="badge-atrib"><i class="fas fa-dumbbell"></i> LPO & Força</span>
                                 <time class="rv-date" datetime="2026-06">Jun 2026</time>
                             </footer>
                         </article>
 
-                        <!-- Card 6 -->
                         <article class="rv-card">
-                            <h4 class="sr-only">Avaliação de Pedro Alves</h4>
                             <header class="rv-card__header">
                                 <div class="rv-avatar">P</div>
                                 <div>
                                     <p class="rv-card__name">Pedro Alves</p>
                                     <div class="rv-stars rv-stars--2">
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="fas fa-star" aria-hidden="true"></i>
-                                        <i class="far fa-star" aria-hidden="true"></i>
-                                        <i class="far fa-star" aria-hidden="true"></i>
-                                        <i class="far fa-star" aria-hidden="true"></i>
-                                        <span class="sr-only">2 de 5 estrelas</span>
+                                        <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="far fa-star" aria-hidden="true"></i><i class="far fa-star" aria-hidden="true"></i><i class="far fa-star" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <span class="rv-badge rv-badge--critical">Crítica</span>
                             </header>
-                            <p class="treino-descricao">"Estrutura boa, mas tive problemas com o cancelamento do plano.
-                                Processo burocrático e demorado. Esperava mais agilidade."</p>
+                            <p class="treino-descricao">"Estrutura boa, mas tive problemas com o cancelamento do plano. Processo burocrático e demorado. Esperava mais agilidade."</p>
                             <footer class="rv-card__footer">
                                 <span class="badge-atrib"><i class="fas fa-cog"></i> Geral</span>
                                 <time class="rv-date" datetime="2026-02">Fev 2026</time>
                             </footer>
                         </article>
-
                     </div>
 
-                    <!-- Painel: Formulário de novo comentário -->
                     <div class="rv-panel rv-panel--form">
                         <div class="treino-horarios-box rv-form-wrapper">
-                            <div class="treino-titulo-bloco">
-                                <h3>Deixe seu depoimento</h3>
-                            </div>
+                            <div class="treino-titulo-bloco"><h3>Deixe seu depoimento</h3></div>
                             <form class="rv-form" action="#avaliacoes" method="get" novalidate>
-
                                 <div class="rv-form__row">
                                     <div class="rv-form__field">
                                         <label class="rv-form__label" for="rv-nome">Nome</label>
-                                        <input class="rv-form__input" id="rv-nome" name="nome" type="text"
-                                            placeholder="Seu nome completo" required>
+                                        <input class="rv-form__input" id="rv-nome" name="nome" type="text" placeholder="Seu nome completo" required>
                                     </div>
                                     <div class="rv-form__field">
                                         <label class="rv-form__label" for="rv-modalidade">Modalidade</label>
@@ -707,71 +528,44 @@
                                         </select>
                                     </div>
                                 </div>
-
-                                <!-- SISTEMA DE CLIQUE -->
                                 <fieldset class="rv-form__fieldset">
                                     <legend class="rv-form__label">Sua nota</legend>
                                     <div class="rv-star-picker">
-                                        <input type="radio" id="review-5" class="sr-only rv-star-input"
-                                            name="review-stars" value="5">
-                                        <label for="review-5"><i class="fas fa-star"></i><span class="sr-only">5
-                                                estrelas</span></label>
-
-                                        <input type="radio" id="review-4" class="sr-only rv-star-input"
-                                            name="review-stars" value="4">
-                                        <label for="review-4"><i class="fas fa-star"></i><span class="sr-only">4
-                                                estrelas</span></label>
-
-                                        <input type="radio" id="review-3" class="sr-only rv-star-input"
-                                            name="review-stars" value="3">
-                                        <label for="review-3"><i class="fas fa-star"></i><span class="sr-only">3
-                                                estrelas</span></label>
-
-                                        <input type="radio" id="review-2" class="sr-only rv-star-input"
-                                            name="review-stars" value="2">
-                                        <label for="review-2"><i class="fas fa-star"></i><span class="sr-only">2
-                                                estrelas</span></label>
-
-                                        <input type="radio" id="review-1" class="sr-only rv-star-input"
-                                            name="review-stars" value="1">
-                                        <label for="review-1"><i class="fas fa-star"></i><span class="sr-only">1
-                                                estrela</span></label>
+                                        <input type="radio" id="review-5" class="sr-only" name="review-stars" value="5">
+                                        <label for="review-5"><i class="fas fa-star"></i></label>
+                                        <input type="radio" id="review-4" class="sr-only" name="review-stars" value="4">
+                                        <label for="review-4"><i class="fas fa-star"></i></label>
+                                        <input type="radio" id="review-3" class="sr-only" name="review-stars" value="3">
+                                        <label for="review-3"><i class="fas fa-star"></i></label>
+                                        <input type="radio" id="review-2" class="sr-only" name="review-stars" value="2">
+                                        <label for="review-2"><i class="fas fa-star"></i></label>
+                                        <input type="radio" id="review-1" class="sr-only" name="review-stars" value="1">
+                                        <label for="review-1"><i class="fas fa-star"></i></label>
                                     </div>
                                 </fieldset>
                                 <div class="rv-form__field">
                                     <label class="rv-form__label" for="rv-comentario">Comentário</label>
-                                    <textarea class="rv-form__input rv-form__textarea" id="rv-comentario"
-                                        name="comentario" placeholder="Conte sua experiência na Selva..." rows="4"
-                                        required></textarea>
+                                    <textarea class="rv-form__input rv-form__textarea" id="rv-comentario" name="comentario" placeholder="Conte sua experiência na Selva..." rows="4" required></textarea>
                                 </div>
-
-                                <button class="btn rv-form__submit" type="submit">
-                                    Enviar avaliação <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                                </button>
-
+                                <button class="btn rv-form__submit" type="submit">Enviar avaliação <i class="fas fa-chevron-right" aria-hidden="true"></i></button>
                             </form>
                         </div>
                     </div>
-
                 </div>
             </section>
 
-            <!-- Seção O Líder -->
-            <section id="lider" class="treino-secao-independente" style="background: #0d0d0e;">
+            <!-- O LÍDER -->
+            <section id="lider" class="treino-secao-independente">
                 <div class="treino-container-centralizado">
                     <div class="treino-row-grande">
-
-                        <!-- LADO ESQUERDO -->
-                        <div class="treino-col-img-grande"
-                            style="overflow: visible; border: none; box-shadow: none; background: transparent;">
+                        <div class="treino-col-img-grande" style="overflow: visible; border: none; box-shadow: none; background: transparent;">
                             <div class="flip-card-container" onclick="this.classList.toggle('flipped')">
                                 <div class="flip-card">
                                     <div class="flip-front">
                                         <div class="flip-front-content">
                                             <h3>Rodrigo Dias</h3>
                                             <p class="cargo">Fundador</p>
-                                            <p><i class="fas fa-medal" aria-hidden="true"></i> 12 anos de experiência
-                                            </p>
+                                            <p><i class="fas fa-medal" aria-hidden="true"></i> 12 anos de experiência</p>
                                         </div>
                                     </div>
                                     <div class="flip-back">
@@ -783,153 +577,89 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- LADO DIREITO -->
                         <div class="lider-col-texto-grande">
-                            <div class="treino-titulo-bloco">
-                                <h3>O Líder</h3>
-                            </div>
+                            <div class="treino-titulo-bloco"><h3>O Líder</h3></div>
                             <p class="treino-descricao">
-                                Ex-atleta de crossfit, <strong>Rodrigo Dias</strong> fundou a <strong>Selva</strong> com
-                                a missão de criar um ambiente de treino intenso, disciplinado e sem frescuras. Inspirada
-                                no treinamento raiz, a academia nasceu para quem busca evolução física e mental através
-                                de desafios reais, constância e superação diária. Mais do que um lugar para treinar, a
-                                Selva reúne uma comunidade movida por força, energia e pela busca da melhor versão de
-                                cada aluno.
+                                Ex-atleta de crossfit, <strong>Rodrigo Dias</strong> fundou a <strong>Selva</strong> com a missão de criar um ambiente de treino intenso, disciplinado e sem frescuras. Inspirada no treinamento raiz, a academia nasceu para quem busca evolução física e mental através de desafios reais, constância e superação diária. Mais do que um lugar para treinar, a Selva reúne uma comunidade movida por força, energia e pela busca da melhor versão de cada aluno.
                             </p>
                         </div>
-
                     </div>
                 </div>
             </section>
 
-            <!-- Seção de Parallax -->
+            <!-- PARALLAX -->
             <div class="parallax-section">
                 <div class="parallax-overlay">
                     <h3>Construa sua melhor versão.</h3>
                     <p>O próximo passo só depende de você.</p>
-                    <a href="https://api.whatsapp.com/send/?phone=556130488201" target="_blank" rel="noopener"
-                        class="btn btn-white">Aula experimental gratuita</a>
+                    <a href="https://api.whatsapp.com/send/?phone=556130488201" target="_blank" rel="noopener" class="btn btn-white">Aula experimental gratuita</a>
                 </div>
             </div>
 
-            <!-- Seção Próximos Eventos  -->
+            <!-- EVENTOS -->
             <section id="eventos" class="treinos-secao-global" style="padding-bottom: 6rem;">
-
-                <!-- Cabeçalho  -->
                 <div class="container-titulo-treinos">
                     <div class="pq-titulo-bloco">
                         <h2 class="section-main-title text-left">Próximos Eventos</h2>
                     </div>
-                    <p class="section-subtitle">Fique por dentro das principais atividades e competições do nosso
-                        habitat</p>
+                    <p class="section-subtitle">Fique por dentro das principais atividades e competições do nosso habitat</p>
                 </div>
-
-                <!-- Grid de Conteúdo -->
                 <div class="treino-container-centralizado">
                     <div class="eventos-grid">
-
-                        <!-- Evento 1 -->
-                        <a href="https://www.sympla.com.br/evento/ciclismo-no-autodromo-internacional-brb-quinta-feira-25-06/3449644?mp_rloc=Esportes&mp_rtil=Eventos+esportivos+em+destaque"
-                            target="_blank" rel="noopener" class="evento-link-wrapper">
+                        <a href="https://www.sympla.com.br/evento/ciclismo-no-autodromo-internacional-brb-quinta-feira-25-06/3449644" target="_blank" rel="noopener" class="evento-link-wrapper">
                             <article class="evento-card">
-                                <div class="evento-img-wrapper">
-                                    <img src="assets/img/eventos/evento1.jpg"
-                                        alt="Ciclismo no Autódromo Internacional BRB" loading="lazy">
-                                </div>
+                                <div class="evento-img-wrapper"><img src="assets/img/evento1.webp" alt="Ciclismo" loading="lazy"></div>
                                 <div class="evento-info">
                                     <h3>Ciclismo no Autódromo Internacional BRB | (QUINTA-FEIRA 25/06)</h3>
-                                    <div class="evento-data">
-                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                        <span>25 jun - 2026 • 05:00 &gt; 25 jun - 2026 • 09:00</span>
-                                    </div>
-                                    <div class="evento-local">
-                                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                                        <span>Evento presencial em Autódromo Internacional BRB, Brasília - DF</span>
-                                    </div>
+                                    <div class="evento-data"><i class="far fa-calendar-alt" aria-hidden="true"></i> <span>25 jun - 2026 • 05:00 &gt; 09:00</span></div>
+                                    <div class="evento-local"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>Autódromo Internacional BRB, Brasília - DF</span></div>
                                 </div>
                             </article>
                         </a>
-
-                        <!-- Evento 2 -->
-                        <a href="https://www.sympla.com.br/evento/wellness-life-expo-2026-brasilia-df/3457720?referrer=gemini.google.com"
-                            target="_blank" rel="noopener" class="evento-link-wrapper">
+                        <a href="https://www.sympla.com.br/evento/wellness-life-expo-2026-brasilia-df/3457720" target="_blank" rel="noopener" class="evento-link-wrapper">
                             <article class="evento-card">
-                                <div class="evento-img-wrapper">
-                                    <img src="assets/img/eventos/evento2.png" alt="Wellness Life Expo 2026"
-                                        loading="lazy">
-                                </div>
+                                <div class="evento-img-wrapper"><img src="assets/img/evento2.webp" alt="Wellness Expo" loading="lazy"></div>
                                 <div class="evento-info">
                                     <h3>Wellness Life Expo 2026 | Brasília/DF</h3>
-                                    <div class="evento-data">
-                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                        <span>27 jun - 2026 • 09:00 &gt; 28 jun - 2026 • 20:00</span>
-                                    </div>
-                                    <div class="evento-local">
-                                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                                        <span>Evento presencial em Estacionamento 11 - Parque da Cidade, Brasília -
-                                            DF</span>
-                                    </div>
+                                    <div class="evento-data"><i class="far fa-calendar-alt" aria-hidden="true"></i> <span>27 jun - 2026 • 09:00 &gt; 28 jun - 20:00</span></div>
+                                    <div class="evento-local"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>Parque da Cidade, Brasília - DF</span></div>
                                 </div>
                             </article>
                         </a>
-
-                        <!-- Evento 3 -->
-                        <a href="https://www.sympla.com.br/evento/festival-fitness-bop-games-brasilia-2026/3372519?referrer=www.google.com"
-                            target="_blank" rel="noopener" class="evento-link-wrapper">
+                        <a href="https://www.sympla.com.br/evento/festival-fitness-bop-games-brasilia-2026/3372519" target="_blank" rel="noopener" class="evento-link-wrapper">
                             <article class="evento-card">
-                                <div class="evento-img-wrapper">
-                                    <img src="assets/img/eventos/evento3.jpg"
-                                        alt="FESTIVAL FITNESS - BOP GAMES BRASÍLIA 2026" loading="lazy">
-                                </div>
+                                <div class="evento-img-wrapper"><img src="assets/img/evento3.webp" alt="BOP GAMES" loading="lazy"></div>
                                 <div class="evento-info">
                                     <h3>FESTIVAL FITNESS - BOP GAMES BRASÍLIA 2026</h3>
-                                    <div class="evento-data">
-                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                        <span>04 jul - 2026 • 08:00 &gt; 05 jul - 2026 • 08:00</span>
-                                    </div>
-                                    <div class="evento-local">
-                                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                                        <span>Evento presencial em Arena BRB Mané Garrincha, Brasília - DF</span>
-                                    </div>
+                                    <div class="evento-data"><i class="far fa-calendar-alt" aria-hidden="true"></i> <span>04 jul - 2026 • 08:00 &gt; 05 jul - 08:00</span></div>
+                                    <div class="evento-local"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>Arena BRB Mané Garrincha, Brasília - DF</span></div>
                                 </div>
                             </article>
                         </a>
-
                     </div>
                 </div>
             </section>
 
-            <!-- Seção Onde Estamos -->
+            <!-- LOCALIZAÇÃO -->
             <section id="localizacao" class="treinos-secao-global" style="padding-bottom: 6rem;">
-
-                <!-- Cabeçalho da Seção -->
                 <div class="container-titulo-treinos">
                     <div class="pq-titulo-bloco">
                         <h2 class="section-main-title text-left">Onde Estamos</h2>
                     </div>
                     <p class="section-subtitle">Venha treinar no melhor espaço de Samambaia</p>
                 </div>
-
-                <!-- Container centralizado -->
                 <div class="treino-container-centralizado">
                     <p class="localizacao-p">
-                        <i class="fas fa-map-pin" aria-hidden="true"></i>
-                        Qn 401 Conjunto D E, 03 - Samambaia, Brasília - DF, 72319-502
+                        <i class="fas fa-map-pin" aria-hidden="true"></i> Qn 401 Conjunto D E, 03 - Samambaia, Brasília - DF, 72319-502
                     </p>
-
                     <div class="mapa-wrapper">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.8065014444214!2d-48.097800326151955!3d-15.86676408478375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcd176c626767%3A0x6e49fe9bae37ff6!2sFaculdade%20CCI%20%E2%80%93%20Ensino%20Superior!5e0!3m2!1spt-BR!2sbr!4v1779733617661!5m2!1spt-BR!2sbr"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.8065014444214!2d-48.097800326151955!3d-15.86676408478375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcd176c626767%3A0x6e49fe9bae37ff6!2sFaculdade%20CCI%20%E2%80%93%20Ensino%20Superior!5e0!3m2!1spt-BR!2sbr!4v1779733617661!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </section>
-
         </main>
 
-        <!-- Rodapé -->
+        <!-- RODAPÉ -->
         <footer>
             <div class="container footer-grid">
                 <div class="footer-left">
@@ -939,31 +669,24 @@
                         <a href="pages/termos-light.html" class="link-termos-light">Termos de Uso e Privacidade</a>
                     </p>
                 </div>
-
                 <div class="footer-center">
                     <div class="footer-logo">
-                        <figure class="logo-container-footer">
-                            <img src="assets/icons/logo.svg" class="logo-light" alt="Logotipo Selva CrossFit">
-                        </figure>
+                        <img src="assets/icons/logo.svg" alt="Logotipo Selva CrossFit">
                     </div>
                     <h2 class="footer-brand-title">SELVA</h2>
                     <span class="footer-brand-sub">crossfitbox</span>
                 </div>
-
                 <div class="footer-right">
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/faculdadecci/reels/" target="_blank" rel="noopener"
-                            aria-label="Instagram da Selva CrossFit">
-                            <img src="assets/icons/instagram.svg" alt="Siga-nos no Instagram" loading="lazy">
+                        <a href="https://www.instagram.com/faculdadecci/reels/" target="_blank" rel="noopener" aria-label="Instagram da Selva CrossFit">
+                            <img src="assets/icons/instagram.svg" alt="Instagram" loading="lazy">
                         </a>
-                        <a href="https://www.facebook.com/FaculdadeCCI/" target="_blank" rel="noopener"
-                            aria-label="Facebook da Selva CrossFit">
-                            <img src="assets/icons/facebook.svg" alt="Curta no Facebook" loading="lazy">
+                        <a href="https://www.facebook.com/FaculdadeCCI/" target="_blank" rel="noopener" aria-label="Facebook da Selva CrossFit">
+                            <img src="assets/icons/facebook.svg" alt="Facebook" loading="lazy">
                         </a>
                     </div>
                 </div>
             </div>
-
             <div class="container">
                 <hr>
                 <div class="footer-links">

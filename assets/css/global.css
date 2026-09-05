@@ -1,48 +1,50 @@
 /* ==========================================================================
-   VARIÁVEIS CSS (TEMA ESCURO PADRÃO)
+  GLOBAL CSS & VARIÁVEIS DE TEMA
    ========================================================================== */
 :root {
-    /* Cores de fundo */
+    /* Cores dinâmicas (Mudam com o tema) */
     --bg-primary: #0d0d0e;
     --bg-secondary: #1a1a1c;
     --bg-card: #1a1a1c;
-    --bg-header: #64745c;            /* Verde fixo do cabeçalho (não muda) */
-    --bg-footer: #2e352a;
-
-    /* Cores de texto */
+    
     --text-primary: #ffffff;
     --text-secondary: #cccccc;
     --text-muted: #aaaaaa;
 
-    /* Bordas e sombras */
     --border-color: rgba(255, 255, 255, 0.1);
     --border-light: rgba(255, 255, 255, 0.08);
     --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.4);
     --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.5);
 
-    /* Cor de destaque (accent) */
-    --accent: #829679;
-    --accent-dark: #64745c;
-
-    /* Badge e inputs */
     --badge-bg: #1a1a1c;
     --input-bg: #0d0d0e;
+
+    /* Cores estáticas (Nunca mudam, independente do tema) */
+    --text-always-light: #ffffff;
+    --bg-header: #64745c;
+    --bg-footer: #2e352a;
+    --accent: #829679;
+    --accent-dark: #64745c;
+    --accent-orange: #e67e22; /* Usado em planos e avaliações */
 }
 
 /* ==========================================================================
-   TEMA CLARO (ativado pelo checkbox #dark-toggle)
+   TEMA CLARO (LIGHT MODE) - INVERSÃO AUTOMÁTICA
    ========================================================================== */
 #dark-toggle:checked ~ .site-container {
     --bg-primary: #f4f4f6;
     --bg-secondary: #ffffff;
     --bg-card: #ffffff;
+    
     --text-primary: #111111;
     --text-secondary: #333333;
     --text-muted: #555555;
+    
     --border-color: rgba(0, 0, 0, 0.08);
     --border-light: rgba(0, 0, 0, 0.06);
     --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.05);
     --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.1);
+    
     --badge-bg: #ffffff;
     --input-bg: #f4f4f6;
 }
@@ -50,16 +52,6 @@
 /* ==========================================================================
    ESTILOS GLOBAIS
    ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Montserrat', 'Roboto', sans-serif;
     background: var(--bg-primary);
@@ -83,11 +75,11 @@ h1, h2, h3, h4 {
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 1px;
 }
+
 /* ==========================================================================
    BOTÕES E UTILITÁRIOS GERAIS
    ========================================================================== */
-.btn,
-.btn-white {
+.btn, .btn-white {
     display: inline-block;
     border-radius: 4px;
     padding: 16px 36px;
@@ -96,7 +88,7 @@ h1, h2, h3, h4 {
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .btn {
@@ -111,29 +103,22 @@ h1, h2, h3, h4 {
     background: var(--accent-dark);
     transform: translateY(-3px);
     animation: none;
-    box-shadow: none;
 }
 
 @keyframes pulseGlow {
-    0% { box-shadow: 0 0 0 0 rgba(151, 241, 36, 0.4); }
-    70% { box-shadow: 0 0 0 15px rgba(151, 241, 36, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(151, 241, 36, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(130, 150, 121, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(130, 150, 121, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(130, 150, 121, 0); }
 }
 
 .btn-white {
     background: transparent;
-    color: var(--text-primary);
+    color: var(--text-always-light);
     border: 2px solid var(--border-color);
 }
 
 .btn-white:hover {
-    background: var(--bg-secondary);
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-.btn-small {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    animation: none;
+    background: var(--text-always-light);
+    color: #000000;
+    border-color: var(--text-always-light);
 }

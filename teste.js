@@ -1,1 +1,0 @@
-# Função para validar se um e-mail é válido

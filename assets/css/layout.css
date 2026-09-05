@@ -1,0 +1,268 @@
+/* ==========================================================================
+    HEADER E NAVEGAÇÃO 
+   ========================================================================== */
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--bg-header);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 2rem;
+    transition: padding 0.3s ease;
+}
+
+.main-header .header-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.logo-link {
+    text-decoration: none;
+    display: inline-block;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.logo-area-composta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-texto-bloco {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.logo-simbolo {
+    height: 40px;
+    width: auto;
+    margin-right: -7px;
+}
+
+.logo-txt-principal {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #ffffff !important;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.logo-txt-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #ffffff !important;
+    letter-spacing: 2px;
+    margin: -2px 0 0 30px;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.top-nav > ul {
+    list-style: none;
+    display: flex;
+    gap: 1.8rem;
+    align-items: center;
+}
+
+.top-nav > ul > li {
+    position: relative;
+    height: 100%;
+}
+
+.top-nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.top-nav a:hover { color: #ffffff; }
+
+/* EFEITO DE SUBLINHADO APENAS NOS LINKS SIMPLES (IGNORA DROPDOWN E BOTÃO) */
+.top-nav > ul > li:not(.dropdown):not(.nav-btn-container) > a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transform-origin: center;
+    opacity: 0.2;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.top-nav > ul > li:not(.dropdown):not(.nav-btn-container) > a:hover::after { 
+    transform: scaleX(1); 
+}
+
+/* ==========================================================================
+   DROPDOWN (MENU SUSPENSO)
+   ========================================================================== */
+.dropdown > a > i { transition: transform 0.4s ease; font-size: 0.8rem; }
+.dropdown:hover > a > i { transform: rotate(180deg); }
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #3b4436;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.dropdown::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 20px; }
+.dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+.dropdown-menu a {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+.dropdown-menu a:hover { background: rgba(255, 255, 255, 0.15); padding-left: 1.5rem; }
+
+/* ==========================================================================
+   BOTÃO MATRICULE-SE (HEADER)
+   ========================================================================== */
+.top-nav .btn-nav-eval {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 6px 18px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+.top-nav .btn-nav-eval:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #000000 !important;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   CONTROLES (TEMA E MENU MOBILE)
+   ========================================================================== */
+.header-controls { display: flex; align-items: center; gap: 1.5rem; margin-left: 1.5rem; }
+.theme-toggle { background: rgba(255, 255, 255, 0.2); padding: 0.4rem 0.9rem; border-radius: 4px; transition: all 0.3s ease; cursor: pointer; }
+.theme-toggle:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.3); }
+.toggle-label { display: flex; align-items: center; cursor: pointer; color: #ffffff; }
+
+.btn-mobile-menu { display: none; font-size: 1.8rem; color: #ffffff; cursor: pointer; }
+
+
+/* ==========================================================================
+   RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: var(--bg-footer);
+    color: #ffffff;
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+}
+
+.footer-grid { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 2.5rem; 
+    width: 100%;
+    max-width: 1100px; 
+    margin: 0 auto 2rem; 
+}
+
+.footer-seguranca { font-size: 0.95rem; color: #e0e0e0; display: flex; align-items: center; gap: 8px;}
+.footer-seguranca i { color: var(--accent); }
+.footer-seguranca a { color: #ffffff; text-decoration: underline; }
+
+.footer-logo { width: 90px; margin: 0 auto 0.75rem; }
+.footer-brand-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2.2rem; letter-spacing: 2px; line-height: 1; margin-bottom: 5px;}
+.footer-brand-sub { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px; color: #cccccc; display: block; }
+
+.social-icons { display: flex; gap: 1.5rem; }
+.social-icons img { width: 32px; height: 32px; transition: transform 0.2s ease; }
+.social-icons a:hover img { transform: scale(1.08); }
+
+footer hr { border-top: 1px solid rgba(255, 255, 255, 0.15); max-width: 1100px; margin: 1.5rem auto; width: 100%;}
+.footer-links { font-size: 0.85rem; color: #aaaaaa; }
+
+.link-termos-light { display: none !important; }
+#dark-toggle:checked ~ .site-container .link-termos-dark { display: none !important; }
+#dark-toggle:checked ~ .site-container .link-termos-light { display: inline-block !important; }
+
+/* ==========================================================================
+   RESPONSIVIDADE E CHECKBOXES OCULTOS
+   ========================================================================== */
+#dark-toggle, #menu-toggle { position: fixed !important; opacity: 0 !important; pointer-events: none !important; z-index: -1 !important; }
+
+@media (min-width: 768px) {
+    .footer-grid { 
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: center; 
+    }
+    .footer-left { 
+        flex: 1; 
+        display: flex;
+        justify-content: flex-start;
+        text-align: left; 
+    }
+    .footer-center { 
+        flex: 1; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-right { 
+        flex: 1; 
+        display: flex; 
+        justify-content: flex-end; /* Agora o display flex empurra os ícones para o canto */
+    }
+}
+
+@media (max-width: 992px) {
+    .main-header .header-container { justify-content: space-between; padding: 0 0.5rem; }
+    .btn-mobile-menu { display: block !important; order: 2; }
+    .header-controls { margin-left: 0; }
+    .top-nav { position: absolute; top: 100%; left: 0; width: 100%; background: #3b4436; padding: 1.5rem; display: none !important; }
+    #menu-toggle:checked ~ .site-container .top-nav { display: block !important; }
+    .top-nav > ul { flex-direction: column !important; gap: 0.8rem !important; }
+    .top-nav a { justify-content: center; padding: 0.8rem 0; font-size: 1.4rem; color: #ffffff !important; }
+    
+    .top-nav .btn-nav-eval { width: 90%; margin: 10px auto 0; padding: 12px 24px; text-align: center; }
+    
+    .dropdown-menu { position: relative !important; transform: none !important; background: rgba(0, 0, 0, 0.12) !important; opacity: 1 !important; visibility: visible !important; display: none; }
+    .dropdown:hover .dropdown-menu { display: flex !important; }
+}
