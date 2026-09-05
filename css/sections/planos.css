@@ -1,0 +1,331 @@
+/* ==========================================================================
+   SEÇÃO DE PLANOS
+   ========================================================================== */
+
+.planos-secao-global {
+    background: #0d0d0e; /* Fundo escuro idêntico aos treinos */
+    padding: 6rem 0;
+    transition: background 0.3s ease;
+}
+
+.container-titulo-planos {
+    max-width: 1040px;
+    margin: 0 auto 3rem auto;
+    padding: 0 2.5rem;
+}
+
+.planos-titulo-bloco {
+    border-left: 4px solid var(--accent, #e67e22);
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container-titulo-planos h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0;
+}
+
+.container-titulo-planos p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #aaaaaa;
+}
+
+/* GRID DOS CARDS LADO A LADO */
+.planos-container-centralizado {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+.planos-grid-premium {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* CARDS DE PLANOS */
+.plano-card-premium {
+    background: #1a1a1c; /* Caixa escura padrão dos treinos */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.plano-card-premium:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* CARD DESTAQUE (ANUAL) */
+.plano-card-premium.plano-destaque {
+    border: 2px solid var(--accent, #e67e22);
+    background: #1e1e22;
+    box-shadow: 0 15px 35px rgba(230, 126, 34, 0.2);
+}
+
+.tag-mais-vantajoso {
+    position: absolute;
+    top: -12px;
+    background: var(--accent, #e67e22);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* DETALHES INTERNOS DO CARD */
+.plano-header h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.5px;
+}
+
+.plano-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: #aaaaaa;
+    margin-bottom: 1.5rem;
+}
+
+/* PREÇOS */
+.plano-preco-box {
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.plano-preco-box .moeda {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    vertical-align: super;
+}
+
+.plano-preco-box .valor {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.plano-preco-box .periodo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    color: #aaaaaa;
+}
+
+/* BADGES DE ECONOMIA */
+.plano-economia-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.plano-economia-badge.economia-vazia {
+    background: transparent;
+    border-color: transparent;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.badge-anual {
+    background: rgba(46, 204, 113, 0.1) !important;
+    border-color: rgba(46, 204, 113, 0.3) !important;
+    color: #2ecc71 !important;
+}
+
+.bonus-anual-tag {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: var(--accent, #e67e22);
+    margin-bottom: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+/* LISTA DE BENEFÍCIOS */
+.plano-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    text-align: left;
+    width: 100%;
+    flex-grow: 1; /* Força os botões ficarem alinhados na base */
+}
+
+.plano-beneficios li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.plano-beneficios li i {
+    color: var(--accent, #e67e22);
+    font-size: 0.85rem;
+}
+
+/* BOTÕES DE MATRÍCULA */
+.plano-action {
+    width: 100%;
+}
+
+.btn-plano {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-plano:hover {
+    background: #ffffff;
+    color: #111111;
+    border-color: #ffffff;
+}
+
+.btn-plano-destaque {
+    background: var(--accent, #e67e22);
+    border-color: var(--accent, #e67e22);
+}
+
+.btn-plano-destaque:hover {
+    background: #d35400;
+    border-color: #d35400;
+    color: #ffffff;
+}
+
+
+/* ==========================================================================
+   SUPORTE COMPLETO AO TEMA CLARO DO BOX (Apoiado no dark-toggle)
+   ========================================================================== */
+#dark-toggle:checked ~ .site-container .planos-secao-global {
+    background: #f4f4f6;
+}
+
+#dark-toggle:checked ~ .site-container .container-titulo-planos h2 {
+    color: #111111;
+}
+
+#dark-toggle:checked ~ .site-container .container-titulo-planos p {
+    color: #555555;
+}
+
+#dark-toggle:checked ~ .site-container .plano-card-premium {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+#dark-toggle:checked ~ .site-container .plano-card-premium.plano-destaque {
+    border-color: var(--accent, #e67e22);
+    background: #fcfcfd;
+}
+
+#dark-toggle:checked ~ .site-container .plano-header h3,
+#dark-toggle:checked ~ .site-container .plano-preco-box {
+    color: #111111;
+}
+
+#dark-toggle:checked ~ .site-container .plano-sub,
+#dark-toggle:checked ~ .site-container .plano-preco-box .periodo,
+#dark-toggle:checked ~ .site-container .plano-beneficios li {
+    color: #444444;
+}
+
+#dark-toggle:checked ~ .site-container .plano-economia-badge {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.06);
+    color: #222222;
+}
+
+#dark-toggle:checked ~ .site-container .plano-economia-badge.economia-vazia {
+    color: transparent;
+}
+
+#dark-toggle:checked ~ .site-container .btn-plano {
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #111111;
+}
+
+#dark-toggle:checked ~ .site-container .btn-plano:hover {
+    background: #111111;
+    color: #ffffff;
+    border-color: #111111;
+}
+
+#dark-toggle:checked ~ .site-container .btn-plano-destaque {
+    color: #ffffff;
+}
+
+#dark-toggle:checked ~ .site-container .planos-politicas-rodape {
+    border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+#dark-toggle:checked ~ .site-container .politica-item-clean {
+    color: #555555;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE & TABLET)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .container-titulo-planos {
+        text-align: center;
+    }
+    
+    .planos-titulo-bloco {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .planos-grid-premium {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 no Tablet */
+        gap: 1.5rem;
+    }
+
+    
+}
+
+@media (max-width: 576px) {
+    .planos-grid-premium {
+        grid-template-columns: 1fr; /* 1 card por linha no Celular */
+    }
+    
+    .plano-card-premium {
+        padding: 2rem 1.2rem;
+    }
+}

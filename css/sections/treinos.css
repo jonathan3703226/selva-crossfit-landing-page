@@ -1,0 +1,244 @@
+/* ==========================================================================
+   SEÇÃO TREINOS (MODALIDADES)
+   ========================================================================== */
+.treinos-secao-global {
+    background: var(--bg-primary);
+    padding-top: 5rem;
+    transition: background 0.3s ease;
+}
+
+.container-titulo-treinos {
+    max-width: 1040px;
+    margin: 0 auto 2rem auto;
+    padding: 0 2.5rem;
+}
+
+.container-titulo-treinos .pq-titulo-bloco {
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.container-titulo-treinos h2.section-main-title.text-left {
+    text-align: left !important;
+    margin-bottom: 0 !important;
+    font-family: 'Bebas Neue', 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+.container-titulo-treinos p.section-subtitle {
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+    text-align: justify;
+}
+
+@media (max-width: 992px) {
+    .container-titulo-treinos .pq-titulo-bloco {
+        border-left: none;
+        padding-left: 0;
+    }
+    .container-titulo-treinos h2.section-main-title.text-left,
+    .container-titulo-treinos p.section-subtitle {
+        text-align: center !important;
+    }
+}
+
+.treino-secao-independente {
+    padding: 4.5rem 0;
+    background: transparent;
+    border-bottom: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.treino-secao-independente:last-child {
+    border-bottom: none;
+}
+
+.treino-container-centralizado {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+.treino-row-grande {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.row-reverse-grande {
+    flex-direction: row-reverse;
+}
+
+.treino-col-texto-grande {
+    flex: 0 0 54%;
+    width: 54%;
+}
+
+.treino-titulo-bloco {
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.treino-col-texto-grande h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.treino-badges-atributos {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1.2rem;
+    padding-left: 1rem;
+}
+
+.badge-atrib {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: var(--badge-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.badge-atrib i {
+    color: var(--accent);
+    font-size: 0.85rem;
+}
+
+.treino-descricao {
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-weight: 400;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.treino-horarios-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+}
+
+.treino-horarios-box h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.treino-horarios-box h4 i {
+    color: var(--accent);
+}
+
+.horarios-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.horario-item {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.horario-item span {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.treino-col-img-grande {
+    flex: 0 0 40%;
+    width: 40%;
+    max-width: 380px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
+    transition: all 0.4s ease;
+}
+
+.treino-col-img-grande img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+    filter: contrast(102%) brightness(1);
+    transition: transform 0.5s ease;
+}
+
+.treino-secao-independente:hover .treino-col-img-grande {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-hover);
+}
+
+.treino-secao-independente:hover .treino-col-img-grande img {
+    transform: scale(1.02);
+}
+
+@media (max-width: 992px) {
+    .treino-secao-independente {
+        padding: 4rem 0;
+    }
+    .treino-row-grande,
+    .row-reverse-grande {
+        flex-direction: column !important;
+        gap: 2rem;
+    }
+    .treino-col-texto-grande,
+    .treino-col-img-grande {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .treino-titulo-bloco {
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
+    }
+    .treino-badges-atributos {
+        justify-content: center;
+        padding-left: 0;
+        flex-wrap: wrap;
+    }
+    .treino-col-texto-grande h3 {
+        font-size: 2.4rem;
+    }
+    .treino-descricao {
+        text-align: center;
+    }
+    .treino-col-img-grande img {
+        height: 280px;
+    }
+}

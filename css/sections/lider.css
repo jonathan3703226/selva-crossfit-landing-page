@@ -1,0 +1,165 @@
+/* ==========================================================================
+   SEÇÃO LÍDER (FLIP CARD - COM SUPORTE DEFINITIVO A TOQUE)
+   ========================================================================== */
+#lider {
+    background: var(--bg-primary) !important;
+    transition: background 0.3s ease;
+}
+
+#lider .treino-col-img-grande {
+    overflow: visible !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.flip-card-container {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 380px;
+    height: 380px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* Remove o flash azul ao tocar no celular */
+}
+
+.flip-card {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+.lider-col-texto-grande h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    color: #000;
+}
+
+/* ==========================================================================
+   GATILHOS DE ROTAÇÃO: Hover no PC e classe .flipped via toque no Celular
+   ========================================================================== */
+.flip-card-container:hover .flip-card,
+.flip-card-container.flipped .flip-card {
+    transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Correção vital para Safari/iOS (iPhone) */
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+}
+
+.flip-front {
+    background-image: url(../../assets/img/banner/fundador.webp);
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--border-color);
+}
+
+.flip-front::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 12px;
+}
+
+.flip-front-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    width: 100%;
+    padding-top: 15px;
+    border-top: 2px solid var(--accent);
+}
+
+.flip-front-content h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.flip-front-content p.cargo {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.flip-front-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: white;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+}
+
+.flip-back i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.flip-back p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE SEÇÃO LÍDER (AJUSTE COMPLETO PARA IPAD, TABLETS E MOBILE)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    /* Ativa a centralização e flexibilidade para iPads e Tablets */
+    .flip-card-container {
+        margin: 0 auto; /* Garante que o card fique centralizado perfeitamente na coluna */
+        max-width: 100%; /* Permite que ele se ajuste se o espaço do tablet for menor que 380px */
+        height: 360px;   /* Uma altura confortável e bem distribuída para telas médias */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Ajustes finos adicionais exclusivos para celulares pequenos */
+    .flip-card-container {
+        height: 350px;   /* Altura ligeiramente menor para smartphones */
+    }
+
+    .flip-front,
+    .flip-back {
+        padding: 1.5rem; /* Menos recuo interno para o texto respirar no celular */
+    }
+
+    .flip-front-content h3 {
+        font-size: 1.75rem;
+    }
+
+    .flip-back p {
+        font-size: 1rem;
+    }
+}

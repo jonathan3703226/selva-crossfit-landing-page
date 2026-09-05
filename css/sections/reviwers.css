@@ -1,0 +1,344 @@
+/* ==========================================================================
+   SEÇÃO DE AVALIAÇÕES
+   ========================================================================== */
+
+#avaliacoes {
+    padding-bottom: 5rem;
+}
+
+/* --------------------------------------------------------------------------
+   ABAS — CONTROLE VIA CHECKBOX
+   -------------------------------------------------------------------------- */
+#reviews-tab-toggle { display: none; }
+
+.rv-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 1rem;
+}
+
+.rv-tab {
+    padding: 8px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #1a1a1c;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rv-tab i {
+    color: #aaaaaa;
+    font-size: 0.85rem;
+}
+
+/* Estado Ativo Padrão: Avaliações ligada */
+.rv-tabs .rv-tab--list {
+    background: var(--accent, #e67e22);
+    border-color: var(--accent, #e67e22);
+    color: #ffffff;
+}
+.rv-tabs .rv-tab--list i { color: #ffffff; }
+
+/* Inversão das Abas ao marcar o checkbox */
+#reviews-tab-toggle:checked ~ .rv-tabs .rv-tab--list {
+    background: #1a1a1c;
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+#reviews-tab-toggle:checked ~ .rv-tabs .rv-tab--list i { color: #aaaaaa; }
+
+#reviews-tab-toggle:checked ~ .rv-tabs .rv-tab--form {
+    background: var(--accent, #e67e22);
+    border-color: var(--accent, #e67e22);
+    color: #ffffff;
+}
+#reviews-tab-toggle:checked ~ .rv-tabs .rv-tab--form i { color: #ffffff; }
+
+
+/* --------------------------------------------------------------------------
+   EXIBIÇÃO DOS PAINÉIS E GRID RESPONSIVO
+   -------------------------------------------------------------------------- */
+.rv-panel--list { display: grid; }
+.rv-panel--form { display: none; }
+
+#reviews-tab-toggle:checked ~ .rv-panel--list { display: none; }
+#reviews-tab-toggle:checked ~ .rv-panel--form { display: block; }
+
+.rv-panel--list {
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   ESTILIZAÇÃO DOS CARDS DE DEPOIMENTO
+   -------------------------------------------------------------------------- */
+.rv-card {
+    background: #1a1a1c;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.rv-card:hover {
+    border-color: var(--accent, #e67e22);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Bordas coloridas baseadas na classificação da avaliação */
+.rv-card:has(.rv-badge--positive) { border-left: 4px solid var(--accent, #e67e22); }
+.rv-card:has(.rv-badge--critical) { border-left: 4px solid #e24b4a; }
+.rv-card:has(.rv-badge--neutral)  { border-left: 4px solid #52525b; }
+
+.rv-card__header {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.rv-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0d0d0e;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--accent, #e67e22);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rv-card__name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .9rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 .1rem;
+}
+
+.rv-card__header .rv-badge { margin-left: auto; }
+
+/* Estrelas Fixas nos Cards */
+.rv-stars i     { font-size: .8rem; }
+.rv-stars i.fas { color: var(--accent, #e67e22); }
+.rv-stars i.far { color: rgba(255, 255, 255, 0.2); }
+
+.rv-card .treino-descricao {
+    margin-bottom: 0;
+    flex: 1;
+}
+
+/* Rodapé do Card - Caixinhas das Modalidades (Modo Escuro Padrão) */
+.rv-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: .75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rv-card__footer .badge-atrib {
+    background: #0d0d0e;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    box-shadow: none;
+    padding: 5px 10px;
+    font-size: 0.72rem;
+    border-radius: 4px;
+    margin-bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rv-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .75rem;
+    color: #aaaaaa;
+}
+
+.rv-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.rv-badge--positive { background: rgba(151, 241, 36, .1); color: #97f124; }
+.rv-badge--critical { background: rgba(226, 75, 74, .1); color: #f87171; }
+.rv-badge--neutral { background: rgba(255, 255, 255, .05); color: #aaaaaa; }
+
+/* --------------------------------------------------------------------------
+   FORMULÁRIO DE ENVIO
+   -------------------------------------------------------------------------- */
+.rv-form-wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.rv-form-wrapper h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: var(--accent, #e67e22);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.rv-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.rv-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.rv-form__field { display: flex; flex-direction: column; gap: .4rem; }
+
+.rv-form__label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #aaaaaa;
+}
+
+.rv-form__input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .9rem;
+    padding: .75rem 1rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #0d0d0e;
+    color: #ffffff;
+    transition: border-color .15s;
+}
+
+.rv-form__input:focus { outline: none; border-color: var(--accent, #e67e22); }
+.rv-form__textarea { resize: vertical; min-height: 110px; }
+.rv-form__fieldset { border: none; padding: 0; display: flex; flex-direction: column; gap: .5rem; }
+
+/* --------------------------------------------------------------------------
+   SISTEMA DE SELEÇÃO DE ESTRELAS INTERATIVO (CSS PURO)
+   -------------------------------------------------------------------------- */
+.rv-star-picker {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: .2rem;
+}
+
+.rv-star-picker label {
+    font-size: 1.7rem;
+    color: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: color .15s ease;
+    padding: 0 .1rem;
+}
+
+/* Efeito Hover: Acende a estrela atual e as anteriores */
+.rv-star-picker label:hover,
+.rv-star-picker label:hover ~ label {
+    color: var(--accent, #e67e22) !important;
+}
+
+/* Efeito Selecionado (Checked): Mantém aceso dinamicamente */
+.rv-star-picker input:checked ~ label {
+    color: var(--accent, #e67e22) !important;
+}
+
+.rv-form__submit {
+    align-self: flex-start;
+    padding: 10px 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    background: var(--accent, #e67e22);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   SUPORTE COMPLETO AO TEMA CLARO (`#dark-toggle:checked`)
+   -------------------------------------------------------------------------- */
+#dark-toggle:checked ~ .site-container #avaliacoes .rv-tab {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #111111;
+}
+
+#dark-toggle:checked ~ .site-container #avaliacoes .rv-tabs .rv-tab--list,
+#dark-toggle:checked ~ .site-container #avaliacoes #reviews-tab-toggle:checked ~ .rv-tabs .rv-tab--form {
+    background: var(--accent, #e67e22);
+    border-color: var(--accent, #e67e22);
+    color: #ffffff;
+}
+
+#dark-toggle:checked ~ .site-container #avaliacoes .rv-tabs {
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+#dark-toggle:checked ~ .site-container .rv-card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* CORREÇÃO DA CAIXINHA ESCURA: Força visibilidade perfeita no tema claro */
+#dark-toggle:checked ~ .site-container #avaliacoes .rv-card__footer .badge-atrib {
+    background: #f4f4f6 !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    color: #222222 !important;
+}
+
+#dark-toggle:checked ~ .site-container .rv-card__name { color: #111111; }
+#dark-toggle:checked ~ .site-container .rv-avatar { background: #f4f4f6; border-color: rgba(0, 0, 0, 0.08); }
+#dark-toggle:checked ~ .site-container .rv-stars i.far { color: rgba(0, 0, 0, 0.15); }
+#dark-toggle:checked ~ .site-container .rv-date { color: #555555; }
+
+#dark-toggle:checked ~ .site-container .rv-form__input {
+    background: #f4f4f6;
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #111111;
+}
+#dark-toggle:checked ~ .site-container .rv-form__label { color: #555555; }
+#dark-toggle:checked ~ .site-container .rv-star-picker label { color: rgba(0, 0, 0, 0.2); }
+
+/* --------------------------------------------------------------------------
+   RESPONSIVIDADE INDEPENDENTE (MOBILE)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .rv-tabs { justify-content: center; }
+    .rv-panel--list { grid-template-columns: 1fr; }
+    .rv-form__row { grid-template-columns: 1fr; }
+    .rv-form__submit { width: 100%; justify-content: center; }
+}
