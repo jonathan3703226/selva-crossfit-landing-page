@@ -1,7 +1,9 @@
 # Selva CrossFit - Landing Page
+# Selva CrossFit - Landing Page
 
-[![Status](https://img.shields.io/badge/Status-Concluído-success.svg)]()
-[![Tecnologias](https://img.shields.io/badge/Tecnologias-HTML5%20%7C%20CSS3-blue.svg)]()
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![No JS](https://img.shields.io/badge/JavaScript-Zero%20Dependencies-brightgreen?style=for-the-badge)
 
 Landing page responsiva desenvolvida para um box de CrossFit. O foco arquitetural do projeto foi construir a interface inteiramente sem dependência de JavaScript, utilizando técnicas avançadas de CSS para manipulação de estado e interatividade.
 
