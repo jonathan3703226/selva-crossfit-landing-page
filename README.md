@@ -6,7 +6,7 @@
 
 Landing page responsiva desenvolvida para um box de CrossFit. O foco arquitetural do projeto foi construir a interface inteiramente sem dependência de JavaScript, utilizando técnicas avançadas de CSS para manipulação de estado e interatividade.
 
-[Acesse a aplicação em produção aqui](https://jonathan3703226.github.io/selva-crossfit-landing-page/)
+[Acesse a aplicação em produção aqui](https://jonathan3703226.github.io/SELVA-crossfitbox-pure-html-css/)
 
 ## Arquitetura e Interatividade (No-JS)
 
