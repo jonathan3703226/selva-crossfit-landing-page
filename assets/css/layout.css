@@ -227,6 +227,9 @@ footer hr { border-top: 1px solid rgba(255, 255, 255, 0.15); max-width: 1100px; 
    ========================================================================== */
 #dark-toggle, #menu-toggle { position: fixed !important; opacity: 0 !important; pointer-events: none !important; z-index: -1 !important; }
 @media (max-width: 992px) {
+    /* ==========================================================================
+       1. CABEÇALHO E MENU MOBILE
+       ========================================================================== */
     .main-header .header-container { 
         justify-content: space-between; 
         padding: 0 0.5rem; 
@@ -241,7 +244,6 @@ footer hr { border-top: 1px solid rgba(255, 255, 255, 0.15); max-width: 1100px; 
         margin-left: 0; 
     }
     
-    /* Menu mobile ajustado e isolado */
     .top-nav { 
         position: absolute; 
         top: 100%; 
@@ -250,7 +252,7 @@ footer hr { border-top: 1px solid rgba(255, 255, 255, 0.15); max-width: 1100px; 
         background: #3b4436; 
         padding: 1.5rem 1rem; 
         display: none !important; 
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         z-index: 1001;
     }
     
@@ -260,7 +262,7 @@ footer hr { border-top: 1px solid rgba(255, 255, 255, 0.15); max-width: 1100px; 
     
     .top-nav > ul { 
         flex-direction: column !important; 
-        gap: 0.8rem !important; 
+        gap: 0.5rem !important; 
         align-items: center;
         padding: 0;
         margin: 0;
@@ -268,63 +270,107 @@ footer hr { border-top: 1px solid rgba(255, 255, 255, 0.15); max-width: 1100px; 
 
     .top-nav li {
         width: 100%;
-        text-align: center;
-        position: relative;
+        display: block !important;
+        position: relative !important;
     }
-    
+
     .top-nav a { 
         display: block;
-        justify-content: center; 
-        padding: 0.5rem 0; 
+        padding: 0.6rem 0; 
         font-size: 1.1rem; 
         color: #ffffff !important; 
+        text-align: center;
     }
 
-    /* MATRICULE-SE (COMPACTO) */
-    .top-nav .nav-btn-container {
-        width: auto;
-        margin-top: 0.5rem;
-    }
-
-    .top-nav .btn-nav-eval { 
-        width: auto !important; 
-        display: inline-flex !important;
+    /* ==========================================================================
+       2. CORREÇÃO DO "GHOST CLICK" NO SUBMENU (TRANSIÇÃO SUAVE)
+       ========================================================================== */
+    .dropdown {
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        padding: 8px 20px !important; 
-        font-size: 0.95rem !important;
-        margin: 0 auto;
     }
 
-    /* ELIMINA QUALQUER ÁREA FANTASMA/OVERLAP NO MOBILE */
     .dropdown::after { 
         display: none !important; 
     }
 
-    /* SUBMENU DROPDOWN NO MOBILE */
     .dropdown-menu { 
-        position: static !important; /* Empurra os itens de baixo para longe em vez de flutuar por cima */
+        position: relative !important; 
+        top: 0 !important;
+        left: 0 !important;
         transform: none !important; 
+        width: 100% !important;
         background: rgba(0, 0, 0, 0.25) !important; 
-        opacity: 1 !important; 
-        visibility: visible !important; 
-        display: none; 
-        margin: 0.5rem auto 0;
-        width: 90%;
+        margin: 0 !important;
+        padding: 0 !important;
         border-radius: 6px;
         box-shadow: none !important;
-        padding: 0.5rem 0;
+        border: none !important;
+        
+        /* Substitui o display:none por altura 0 para evitar o pulo instantâneo */
+        display: flex !important;
+        flex-direction: column !important;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden !important; 
+        transition: max-height 0.4s ease, opacity 0.4s ease;
     }
 
-    /* Exibe o submenu empurrando os elementos sem invadir a área deles */
     .dropdown:hover .dropdown-menu,
-    .dropdown:focus-within .dropdown-menu { 
-        display: flex !important; 
-        flex-direction: column;
+    .dropdown:focus-within .dropdown-menu,
+    .dropdown:active .dropdown-menu { 
+        max-height: 300px; /* Expande suavemente */
+        opacity: 1;
     }
 
     .dropdown-menu a {
-        padding: 0.6rem 0;
+        padding: 12px 0 !important;
+        margin: 0 !important;
         font-size: 0.95rem;
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* ==========================================================================
+       3. BOTÃO MATRICULE-SE CENTRALIZADO
+       ========================================================================== */
+    .top-nav .nav-btn-container {
+        width: 100%;
+        margin-top: 0.5rem;
+        display: flex !important;
+        justify-content: center !important; 
+    }
+
+    .top-nav .btn-nav-eval { 
+        width: max-content !important; 
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 24px !important; 
+        font-size: 0.95rem !important;
+        margin: 0 !important;
+    }
+
+    /* ==========================================================================
+       4. CORREÇÃO DOS CAMPOS VAZANDO (FORMULÁRIO DEPOIMENTOS)
+       ========================================================================== */
+    input:not([type="checkbox"]):not([type="radio"]), 
+    select, 
+    textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important; 
     }
 }
+/* ==========================================================================
+ CORREÇÃO DOS CAMPOS VAZANDO (FORMULÁRIO DEPOIMENTOS)
+ ========================================================================== */
+    /* Aplica a correção de largura apenas em campos de texto, ignorando os checkboxes e radios estruturais */
+    input:not([type="checkbox"]):not([type="radio"]), 
+    select, 
+    textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important; 
+    }
