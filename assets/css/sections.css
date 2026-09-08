@@ -207,7 +207,26 @@
 /* ==========================================================================
    SEÇÃO "POR QUE MATRICULAR"
    ========================================================================== */
-.pq-selva-section { padding: 6rem 0; background: var(--bg-primary); overflow: hidden; }
+.pq-selva-section { 
+    padding: 6rem 0; 
+    background: var(--bg-primary); 
+    overflow: hidden; 
+    position: relative; /* Garante ancoragem dos inputs no centro da seção */
+}
+
+/* Corrige o pulo da tela ao clicar nas setas do carrossel */
+.pq-selva-section input[type="radio"] {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 1px !important;
+    height: 1px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    margin: 0 !important;
+}
+
 .pq-selva-container-centralizado { max-width: 1040px; margin: 0 auto; padding: 0 2.5rem; }
 .pq-selva-flex-layout { display: flex; gap: 4rem; align-items: center; }
 .pq-selva-texto-lado { flex: 0 0 38%; display: flex; flex-direction: column; }
@@ -222,13 +241,14 @@
 .carousel-card-item { flex: 0 0 25%; }
 .card-img-box { position: relative; height: 400px; background: #111; }
 .card-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
 .card-caption-inside {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 6rem 2rem 2rem; /* Aumentei o padding superior para o gradiente subir mais */
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 40%, transparent 100%); /* Gradiente mais escuro e longo */
+    padding: 6rem 2rem 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 40%, transparent 100%);
     z-index: 5;
 }
 
@@ -237,16 +257,17 @@
     color: var(--accent);
     text-transform: uppercase;
     font-family: 'Bebas Neue', sans-serif;
-    margin-bottom: 0.5rem; /* Adicionado um pequeno respiro abaixo do título */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* Sombra extra no texto para garantir leitura */
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 .card-caption-inside p {
     font-size: 0.85rem;
-    color: #ffffff; /* Forçando branco puro em vez da variável que pode mudar no modo claro */
+    color: #ffffff;
     line-height: 1.5;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* Sombra extra no texto para garantir leitura */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
+
 .carousel-navigation-absolute { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; pointer-events: none; }
 .arrows-group-abs { display: none; width: 100%; height: 100%; justify-content: space-between; align-items: center; padding: 0 15px; }
 .carousel-navigation-absolute label, .carousel-navigation-absolute span { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: auto; }
@@ -262,7 +283,6 @@
 #pq-car-2:checked ~ .pq-selva-container-centralizado .carousel-track { transform: translateX(-25%); }
 #pq-car-3:checked ~ .pq-selva-container-centralizado .carousel-track { transform: translateX(-50%); }
 #pq-car-4:checked ~ .pq-selva-container-centralizado .carousel-track { transform: translateX(-75%); }
-
 /* ==========================================================================
    SEÇÃO TREINOS
    ========================================================================== */

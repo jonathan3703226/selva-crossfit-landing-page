@@ -226,43 +226,105 @@ footer hr { border-top: 1px solid rgba(255, 255, 255, 0.15); max-width: 1100px; 
    RESPONSIVIDADE E CHECKBOXES OCULTOS
    ========================================================================== */
 #dark-toggle, #menu-toggle { position: fixed !important; opacity: 0 !important; pointer-events: none !important; z-index: -1 !important; }
-
-@media (min-width: 768px) {
-    .footer-grid { 
-        flex-direction: row; 
-        justify-content: space-between; 
-        align-items: center; 
-    }
-    .footer-left { 
-        flex: 1; 
-        display: flex;
-        justify-content: flex-start;
-        text-align: left; 
-    }
-    .footer-center { 
-        flex: 1; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .footer-right { 
-        flex: 1; 
-        display: flex; 
-        justify-content: flex-end; /* Agora o display flex empurra os ícones para o canto */
-    }
-}
-
 @media (max-width: 992px) {
-    .main-header .header-container { justify-content: space-between; padding: 0 0.5rem; }
-    .btn-mobile-menu { display: block !important; order: 2; }
-    .header-controls { margin-left: 0; }
-    .top-nav { position: absolute; top: 100%; left: 0; width: 100%; background: #3b4436; padding: 1.5rem; display: none !important; }
-    #menu-toggle:checked ~ .site-container .top-nav { display: block !important; }
-    .top-nav > ul { flex-direction: column !important; gap: 0.8rem !important; }
-    .top-nav a { justify-content: center; padding: 0.8rem 0; font-size: 1.4rem; color: #ffffff !important; }
+    .main-header .header-container { 
+        justify-content: space-between; 
+        padding: 0 0.5rem; 
+    }
+
+    .btn-mobile-menu { 
+        display: block !important; 
+        order: 2; 
+    }
+
+    .header-controls { 
+        margin-left: 0; 
+    }
     
-    .top-nav .btn-nav-eval { width: 90%; margin: 10px auto 0; padding: 12px 24px; text-align: center; }
+    /* Menu mobile ajustado e isolado */
+    .top-nav { 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        width: 100%; 
+        background: #3b4436; 
+        padding: 1.5rem 1rem; 
+        display: none !important; 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        z-index: 1001;
+    }
     
-    .dropdown-menu { position: relative !important; transform: none !important; background: rgba(0, 0, 0, 0.12) !important; opacity: 1 !important; visibility: visible !important; display: none; }
-    .dropdown:hover .dropdown-menu { display: flex !important; }
+    #menu-toggle:checked ~ .site-container .top-nav { 
+        display: block !important; 
+    }
+    
+    .top-nav > ul { 
+        flex-direction: column !important; 
+        gap: 0.8rem !important; 
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .top-nav li {
+        width: 100%;
+        text-align: center;
+        position: relative;
+    }
+    
+    .top-nav a { 
+        display: block;
+        justify-content: center; 
+        padding: 0.5rem 0; 
+        font-size: 1.1rem; 
+        color: #ffffff !important; 
+    }
+
+    /* MATRICULE-SE (COMPACTO) */
+    .top-nav .nav-btn-container {
+        width: auto;
+        margin-top: 0.5rem;
+    }
+
+    .top-nav .btn-nav-eval { 
+        width: auto !important; 
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 20px !important; 
+        font-size: 0.95rem !important;
+        margin: 0 auto;
+    }
+
+    /* ELIMINA QUALQUER ÁREA FANTASMA/OVERLAP NO MOBILE */
+    .dropdown::after { 
+        display: none !important; 
+    }
+
+    /* SUBMENU DROPDOWN NO MOBILE */
+    .dropdown-menu { 
+        position: static !important; /* Empurra os itens de baixo para longe em vez de flutuar por cima */
+        transform: none !important; 
+        background: rgba(0, 0, 0, 0.25) !important; 
+        opacity: 1 !important; 
+        visibility: visible !important; 
+        display: none; 
+        margin: 0.5rem auto 0;
+        width: 90%;
+        border-radius: 6px;
+        box-shadow: none !important;
+        padding: 0.5rem 0;
+    }
+
+    /* Exibe o submenu empurrando os elementos sem invadir a área deles */
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu { 
+        display: flex !important; 
+        flex-direction: column;
+    }
+
+    .dropdown-menu a {
+        padding: 0.6rem 0;
+        font-size: 0.95rem;
+    }
 }
