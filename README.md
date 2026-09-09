@@ -1,7 +1,7 @@
 # SELVA crossfitbox Landing Page (Pure HTML/CSS)
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5 Validado](https://img.shields.io/badge/HTML5-W3C_Validado-brightgreen?style=for-the-badge&logo=html5)
+![CSS3 Validado](https://img.shields.io/badge/CSS3-W3C_Validado-brightgreen?style=for-the-badge&logo=css3)
 ![No JS](https://img.shields.io/badge/JavaScript-Zero%20Dependencies-brightgreen?style=for-the-badge)
 
 Landing page responsiva desenvolvida para um box de CrossFit. O foco arquitetural do projeto foi construir a interface inteiramente sem dependência de JavaScript, utilizando técnicas avançadas de CSS para manipulação de estado e interatividade.
@@ -23,6 +23,13 @@ Comportamentos que tradicionalmente dependem de manipulação do DOM via JavaScr
 * **CSS3:** Flexbox, Grid Layout, Custom Properties, Media Queries e Transições 3D.
 * **Assets:** Google Fonts e FontAwesome.
 
+## 🛠️ Qualidade do Código e Semântica
+
+Para garantir as melhores práticas de desenvolvimento web e semântica estrutural, o código deste projeto foi integralmente testado e aprovado utilizando as ferramentas oficiais:
+
+- **HTML5:** Validado via [W3C Markup Validation Service](https://validator.w3.org/) (Zero erros e avisos, com correta hierarquia de headings e tags semânticas como `<article>`, `<header>` e `<nav>`).
+- **CSS3:** Validado via [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/).
+
 ## Estrutura do Projeto
 
 * **Hero Section:** Banner inicial de conversão.
@@ -36,5 +43,5 @@ Comportamentos que tradicionalmente dependem de manipulação do DOM via JavaScr
 Por ser uma aplicação estática e não possuir dependências, o projeto não exige processo de build.
 
 1. Clone o repositório: 
-`git clone https://github.com/SeuUsuario/selva-crossfit-landing-page.git`
+`git clone https://github.com/jonathan3703226/selva-crossfit-landing-page.git`
 2. Abra o arquivo `index.html` em qualquer navegador.
