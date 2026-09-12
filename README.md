@@ -1,4 +1,4 @@
-# SELVA CrossFit Box Landing Page 🏋️‍♂️
+#CrossFit Box Landing Page 🏋️‍♂️
 
 <div align="center">
   <img src="https://img.shields.io/badge/HTML5-W3C_VALIDADO-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5 Validado" />
